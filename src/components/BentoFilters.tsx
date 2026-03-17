@@ -54,7 +54,7 @@ const BentoFilters = () => {
                   : "bg-background text-foreground hover:bg-background/80"
               }`}
             >
-              <span>{f.emoji}</span>
+              <img src={f.icon} alt="" className="w-6 h-6 object-contain" />
               <span className="flex-1 text-left font-body">{f.label}</span>
               {active && <Check className="w-4 h-4" strokeWidth={1.5} />}
             </button>
