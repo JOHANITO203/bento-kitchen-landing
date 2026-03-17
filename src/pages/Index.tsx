@@ -41,10 +41,10 @@ const Index = () => {
           {/* Right actions */}
           <div className="flex items-center gap-2">
             <LanguageToggle />
-            <button className="hidden sm:flex items-center gap-2 rounded-xl bg-secondary px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link to="/account" className="hidden sm:flex items-center gap-2 rounded-xl bg-secondary px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
               <User className="w-4 h-4" strokeWidth={1.5} />
               <span className="font-body">{t.account}</span>
-            </button>
+            </Link>
             <CartButton />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
