@@ -98,6 +98,12 @@ const translations = {
     addToCart: "Добавить",
     clearFilters: "Сбросить",
     noResults: "Ничего не найдено. Попробуйте другие фильтры.",
+    // Categories page
+    categoriesPageTitle: "Категории",
+    categoriesPageSubtitle: "Исследуйте все вкусы Африки — выберите свою категорию.",
+    dishesCount: "блюд",
+    prevCategory: "Предыдущая",
+    nextCategory: "Следующая",
   },
   en: {
     menu: "Menu",
