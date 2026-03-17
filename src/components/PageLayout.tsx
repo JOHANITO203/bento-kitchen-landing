@@ -31,7 +31,7 @@ const PageLayout = ({
 }: PageLayoutProps) => {
   return (
     <div
-      className="min-h-screen bg-background pb-16 md:pb-0"
+      className="min-h-screen bg-background pb-16 md:pb-0 overflow-x-hidden w-full"
       style={{
         backgroundImage: `url(${woodBg})`,
         backgroundSize: "cover",

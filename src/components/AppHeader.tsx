@@ -9,13 +9,9 @@ import LanguageToggle from "@/components/LanguageToggle";
 const logoImg = "/favicon.png";
 
 interface AppHeaderProps {
-  /** Show back arrow instead of full nav */
   backTo?: string;
-  /** Use navigate(-1) for back */
   backNav?: boolean;
-  /** Extra actions to render before CartButton */
   actions?: React.ReactNode;
-  /** Hide cart button */
   hideCart?: boolean;
 }
 
@@ -35,36 +31,36 @@ const AppHeader = ({ backTo, backNav, actions, hideCart }: AppHeaderProps) => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
-      <div className="container flex items-center justify-between py-2.5 sm:py-3">
+    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50 w-full">
+      <div className="container flex items-center justify-between py-2 sm:py-3 gap-2">
         {/* Left side */}
-        <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+        <div className="flex items-center gap-1.5 sm:gap-3 min-w-0 flex-shrink overflow-hidden">
           {(backTo || backNav) && (
             backNav ? (
               <button
                 onClick={() => navigate(-1)}
-                className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-secondary text-foreground hover:bg-secondary/80 transition-colors shrink-0"
+                className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-secondary text-foreground hover:bg-secondary/80 transition-colors shrink-0"
               >
-                <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={1.5} />
+                <ArrowLeft className="w-4 h-4" strokeWidth={1.5} />
               </button>
             ) : (
               <Link
                 to={backTo!}
-                className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-secondary text-foreground hover:bg-secondary/80 transition-colors shrink-0"
+                className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-secondary text-foreground hover:bg-secondary/80 transition-colors shrink-0"
               >
-                <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={1.5} />
+                <ArrowLeft className="w-4 h-4" strokeWidth={1.5} />
               </Link>
             )
           )}
 
-          <Link to="/" className="flex items-center gap-1.5 sm:gap-2 min-w-0 shrink-0">
-            <img src={logoImg} alt="Солнце Африки" className="w-7 h-7 sm:w-8 sm:h-8 object-contain" />
-            <h2 className="text-[11px] sm:text-lg md:text-xl font-graffiti text-foreground whitespace-nowrap truncate max-w-[100px] sm:max-w-none">
+          <Link to="/" className="flex items-center gap-1.5 min-w-0 shrink-0">
+            <img src={logoImg} alt="Солнце Африки" className="w-6 h-6 sm:w-8 sm:h-8 object-contain" />
+            <span className="text-xs sm:text-lg font-graffiti text-foreground whitespace-nowrap">
               солнце<span className="text-primary"> Африки</span>
-            </h2>
+            </span>
           </Link>
 
-          {/* Desktop Nav (home only) */}
+          {/* Desktop Nav */}
           {isHome && (
             <nav className="hidden md:flex items-center gap-1 ml-4">
               {navLinks.map((link) => (
@@ -84,8 +80,8 @@ const AppHeader = ({ backTo, backNav, actions, hideCart }: AppHeaderProps) => {
           )}
         </div>
 
-        {/* Right actions */}
-        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+        {/* Right actions - compact on mobile */}
+        <div className="flex items-center gap-1 sm:gap-2 shrink-0">
           {actions}
           <LanguageToggle />
           {isHome && (
@@ -101,19 +97,19 @@ const AppHeader = ({ backTo, backNav, actions, hideCart }: AppHeaderProps) => {
           {isHome && (
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-secondary text-foreground"
+              className="md:hidden flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-secondary text-foreground"
             >
               {mobileMenuOpen ? (
-                <X className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={1.5} />
+                <X className="w-4 h-4" strokeWidth={1.5} />
               ) : (
-                <Menu className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={1.5} />
+                <Menu className="w-4 h-4" strokeWidth={1.5} />
               )}
             </button>
           )}
         </div>
       </div>
 
-      {/* Mobile menu (home only) */}
+      {/* Mobile menu */}
       <AnimatePresence>
         {isHome && mobileMenuOpen && (
           <motion.div

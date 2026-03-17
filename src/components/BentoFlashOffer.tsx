@@ -43,7 +43,7 @@ const BentoFlashOffer = () => {
         {dishes.map((dish) => (
           <div
             key={dish.id}
-            className="shrink-0 w-40 sm:w-48 rounded-xl bg-background p-3 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover cursor-pointer"
+            className="shrink-0 w-36 sm:w-48 rounded-xl bg-background p-2.5 sm:p-3 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover cursor-pointer"
           >
             <div className="aspect-square rounded-lg overflow-hidden bg-secondary mb-3 flex items-center justify-center">
               <img src={dish.image} alt={dish.name} className="w-full h-full object-contain" />
