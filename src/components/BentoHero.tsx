@@ -49,7 +49,7 @@ const BentoHero = () => {
       <motion.img
         src={graffitiTag}
         alt=""
-        className="absolute bottom-3 right-4 w-28 h-auto opacity-15 pointer-events-none"
+        className="absolute bottom-3 right-4 w-32 h-auto opacity-25 pointer-events-none"
         animate={{ rotate: [-2, 2, -2] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
