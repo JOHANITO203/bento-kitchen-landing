@@ -8,15 +8,15 @@ const BentoLiveTracker = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.7, delay: 0.1, ease: [0.2, 0, 0, 1] }}
-      className="group relative overflow-hidden rounded-3xl shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-0.5 col-span-full lg:col-span-4 min-h-[160px]"
-    >
+      className="group relative overflow-hidden rounded-3xl shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-0.5 col-span-full lg:col-span-4 min-h-[160px]">
+      
       <img
         src={heroDishes}
         alt="African dishes"
-        className="w-full h-full object-cover"
-      />
-    </motion.div>
-  );
+        className="w-full h-full object-cover bg-secondary" />
+      
+    </motion.div>);
+
 };
 
 export default BentoLiveTracker;
