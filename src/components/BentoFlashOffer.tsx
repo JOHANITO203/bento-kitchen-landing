@@ -1,17 +1,20 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Plus } from "lucide-react";
 import { useCart } from "@/context/CartContext";
-import pastaImg from "@/assets/pasta.png";
-import pokeImg from "@/assets/poke.png";
-
-const dishes = [
-  { id: "pasta-truffe", name: "Pasta Truffe Noire", price: 18.9, image: pastaImg },
-  { id: "poke-saumon", name: "Poke Saumon Premium", price: 16.5, image: pokeImg },
-  { id: "pasta-truffe-2", name: "Pasta Carbonara", price: 15.9, image: pastaImg },
-];
+import { useLang } from "@/context/LanguageContext";
+import tagineImg from "@/assets/tagine.png";
+import jollofImg from "@/assets/jollof.png";
+import mafeImg from "@/assets/mafe.png";
 
 const BentoFlashOffer = () => {
   const { addItem } = useCart();
+  const { t } = useLang();
+
+  const dishes = [
+    { id: "tagine-premium", name: t.pastaTruffle, price: 1490, image: tagineImg },
+    { id: "jollof-special", name: t.pokeSalmon, price: 1250, image: jollofImg },
+    { id: "mafe-classic", name: t.pastaCarbonara, price: 1150, image: mafeImg },
+  ];
 
   return (
     <motion.div
@@ -23,14 +26,14 @@ const BentoFlashOffer = () => {
       <div className="flex items-start justify-between mb-6">
         <div>
           <span className="inline-block rounded-xl bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
-            -20%
+            {t.discount}
           </span>
           <h3 className="mt-3 text-xl md:text-2xl font-display font-semibold text-foreground">
-            Sélection Italienne
+            {t.italianSelection}
           </h3>
         </div>
         <div className="flex items-center gap-2 text-sm font-medium text-primary cursor-pointer">
-          <span className="font-body">Tout voir</span>
+          <span className="font-body">{t.seeAll}</span>
           <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
         </div>
       </div>
@@ -46,7 +49,7 @@ const BentoFlashOffer = () => {
             </div>
             <p className="text-sm font-medium text-foreground font-body truncate">{dish.name}</p>
             <div className="flex items-center justify-between mt-1.5">
-              <p className="text-sm font-semibold text-primary tabular-nums">{dish.price.toFixed(2).replace(".", ",")} €</p>
+              <p className="text-sm font-semibold text-primary tabular-nums">{dish.price} {t.currency}</p>
               <button
                 onClick={() => addItem({ id: dish.id, name: dish.name, price: dish.price, image: dish.image })}
                 className="w-7 h-7 rounded-lg bg-primary flex items-center justify-center text-primary-foreground transition-all duration-200 hover:scale-105 active:scale-95"

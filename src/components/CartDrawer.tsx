@@ -1,20 +1,22 @@
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { useCart } from "@/context/CartContext";
+import { useLang } from "@/context/LanguageContext";
 import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const CartDrawer = () => {
   const { items, isOpen, setIsOpen, updateQuantity, removeItem, totalItems, totalPrice } = useCart();
+  const { t } = useLang();
 
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetContent className="flex flex-col bg-background border-border/50 w-full sm:max-w-md">
         <SheetHeader>
           <SheetTitle className="font-display text-xl">
-            Mon Panier <span className="text-muted-foreground text-base">({totalItems})</span>
+            {t.myCart} <span className="text-muted-foreground text-base">({totalItems})</span>
           </SheetTitle>
           <SheetDescription className="font-body text-sm">
-            Vérifiez votre commande avant de continuer.
+            {t.checkOrder}
           </SheetDescription>
         </SheetHeader>
 
@@ -27,7 +29,7 @@ const CartDrawer = () => {
                 className="flex flex-col items-center justify-center h-full text-muted-foreground gap-3"
               >
                 <ShoppingBag className="w-12 h-12" strokeWidth={1} />
-                <p className="text-sm font-body">Votre panier est vide</p>
+                <p className="text-sm font-body">{t.emptyCart}</p>
               </motion.div>
             )}
             {items.map((item) => (
@@ -45,7 +47,7 @@ const CartDrawer = () => {
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium text-foreground font-body truncate">{item.name}</p>
                   <p className="text-sm font-semibold text-primary tabular-nums mt-0.5">
-                    {(item.price * item.quantity).toFixed(2).replace(".", ",")} €
+                    {(item.price * item.quantity)} {t.currency}
                   </p>
                 </div>
                 <div className="flex items-center gap-1.5 shrink-0">
@@ -77,13 +79,13 @@ const CartDrawer = () => {
         {items.length > 0 && (
           <div className="border-t border-border/50 pt-4 space-y-4">
             <div className="flex items-center justify-between">
-              <span className="text-sm text-muted-foreground font-body">Total</span>
+              <span className="text-sm text-muted-foreground font-body">{t.total}</span>
               <span className="text-lg font-display font-semibold text-foreground tabular-nums">
-                {totalPrice.toFixed(2).replace(".", ",")} €
+                {totalPrice} {t.currency}
               </span>
             </div>
             <button className="w-full rounded-xl bg-primary px-5 py-3.5 text-sm font-semibold text-primary-foreground transition-all duration-300 bento-ease hover:scale-[1.01] active:scale-[0.99]">
-              Commander — {totalPrice.toFixed(2).replace(".", ",")} €
+              {t.order} — {totalPrice} {t.currency}
             </button>
           </div>
         )}

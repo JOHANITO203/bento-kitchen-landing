@@ -6,11 +6,15 @@ import BentoFlashOffer from "@/components/BentoFlashOffer";
 import BentoFilters from "@/components/BentoFilters";
 import CartButton from "@/components/CartButton";
 import CartDrawer from "@/components/CartDrawer";
-import sushiImg from "@/assets/sushi.png";
-import burgerImg from "@/assets/burger.png";
-import pokeImg from "@/assets/poke.png";
+import LanguageToggle from "@/components/LanguageToggle";
+import { useLang } from "@/context/LanguageContext";
+import jollofImg from "@/assets/jollof.png";
+import tagineImg from "@/assets/tagine.png";
+import mafeImg from "@/assets/mafe.png";
 
 const Index = () => {
+  const { t } = useLang();
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -20,28 +24,28 @@ const Index = () => {
             солнце<span className="text-primary"> Африки</span>
           </h2>
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">Restaurants</a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">Catégories</a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">Offres</a>
+            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">{t.restaurants}</a>
+            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">{t.categories}</a>
+            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">{t.offers}</a>
           </nav>
-          <CartButton />
+          <div className="flex items-center gap-3">
+            <LanguageToggle />
+            <CartButton />
+          </div>
         </div>
       </header>
 
       {/* Bento Grid */}
       <main className="container py-6 md:py-10">
         <div className="grid grid-cols-4 sm:grid-cols-8 lg:grid-cols-12 gap-4 md:gap-5">
-          {/* Row 1-2: Hero + Live Tracker + Stats */}
           <BentoHero />
           <BentoLiveTracker />
           <BentoStats />
 
-          {/* Row 3: Categories */}
-          <BentoCategory label="Populaire" title="Sushis d'Exception" image={sushiImg} delay={0.2} />
-          <BentoCategory label="Tendance" title="Burgers Gourmet" image={burgerImg} delay={0.25} />
-          <BentoCategory label="Healthy" title="Poké Bowls" image={pokeImg} delay={0.3} />
+          <BentoCategory labelKey="popular" titleKey="jollofRice" image={jollofImg} delay={0.2} />
+          <BentoCategory labelKey="trending" titleKey="tagine" image={tagineImg} delay={0.25} />
+          <BentoCategory labelKey="healthy" titleKey="pokeBowl" image={mafeImg} delay={0.3} />
 
-          {/* Row 4: Flash Offer + Filters */}
           <BentoFlashOffer />
           <BentoFilters />
         </div>

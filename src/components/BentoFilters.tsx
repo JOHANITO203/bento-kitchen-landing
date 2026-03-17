@@ -1,17 +1,19 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { useState } from "react";
-
-const filters = [
-  { label: "Végétarien", emoji: "🌿" },
-  { label: "Rapide", emoji: "⚡" },
-  { label: "Étoilé", emoji: "⭐" },
-  { label: "Healthy", emoji: "🥗" },
-  { label: "Nouveau", emoji: "✨" },
-];
+import { useLang } from "@/context/LanguageContext";
 
 const BentoFilters = () => {
+  const { t } = useLang();
   const [selected, setSelected] = useState<string[]>([]);
+
+  const filters = [
+    { label: t.vegetarian, emoji: "🌿" },
+    { label: t.fast, emoji: "⚡" },
+    { label: t.starred, emoji: "⭐" },
+    { label: t.healthyFilter, emoji: "🥗" },
+    { label: t.newFilter, emoji: "✨" },
+  ];
 
   const toggle = (label: string) => {
     setSelected((prev) =>
@@ -27,10 +29,10 @@ const BentoFilters = () => {
       className="rounded-3xl bg-secondary p-6 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-0.5 col-span-full sm:col-span-6 lg:col-span-4 min-h-[260px]"
     >
       <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-        Filtres
+        {t.filters}
       </span>
       <h3 className="mt-2 text-xl font-display font-semibold text-foreground mb-5">
-        Vos envies
+        {t.yourCravings}
       </h3>
 
       <div className="flex flex-col gap-2">
