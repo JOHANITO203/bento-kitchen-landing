@@ -1,3 +1,4 @@
+import woodBg from "@/assets/wood-bg.jpg";
 import BentoHero from "@/components/BentoHero";
 import BentoLiveTracker from "@/components/BentoLiveTracker";
 import BentoStats from "@/components/BentoStats";
