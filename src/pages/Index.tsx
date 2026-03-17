@@ -23,7 +23,7 @@ const Index = () => {
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
         <div className="container flex items-center justify-between py-3">
           {/* Logo */}
-          <h2 className="text-xl font-display font-semibold text-foreground shrink-0">
+          <h2 className="text-xl font-graffiti text-foreground shrink-0">
             солнце<span className="text-primary"> Африки</span>
           </h2>
 
