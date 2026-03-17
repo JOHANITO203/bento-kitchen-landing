@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import heroDishes from "@/assets/hero-dishes.png";
+import heroDishes from "@/assets/hero-dishes.jpg";
 
 const BentoLiveTracker = () => {
   return (
