@@ -91,7 +91,7 @@ const MenuPage = () => {
   );
 
   return (
-    <PageLayout backTo="/" headerActions={filterButton}>
+    <PageLayout backTo="/" headerActions={<span className="hidden md:flex">{filterButton}</span>}>
         {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
