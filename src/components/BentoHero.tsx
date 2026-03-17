@@ -27,7 +27,7 @@ const BentoHero = () => {
           <UtensilsCrossed className="w-3.5 h-3.5" strokeWidth={1.5} />
           солнце Африки
         </span>
-        <h1 className="mt-4 text-4xl md:text-5xl lg:text-6xl font-graffiti text-foreground leading-[1.1] whitespace-pre-line">
+        <h1 className="mt-3 sm:mt-4 text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-graffiti text-foreground leading-[1.1] whitespace-pre-line">
           {t.heroTitle}
         </h1>
         <p className="mt-4 text-base text-muted-foreground font-body max-w-md">
