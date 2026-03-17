@@ -35,7 +35,7 @@ const Index = () => {
           <nav className="hidden md:flex items-center gap-6">
             <Link to="/menu" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">{t.menu}</Link>
             <Link to="/categories" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">{t.categories}</Link>
-            <a href="#offers" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">{t.offers}</a>
+            <Link to="/offers" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">{t.offers}</Link>
           </nav>
 
           {/* Right actions */}
