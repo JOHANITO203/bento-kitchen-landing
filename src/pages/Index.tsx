@@ -15,7 +15,7 @@ const Index = () => {
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
         <div className="container flex items-center justify-between py-4">
           <h2 className="text-xl font-display font-semibold text-foreground">
-            vite<span className="text-primary">.</span>
+            солнце<span className="text-primary"> Африки</span>
           </h2>
           <nav className="hidden md:flex items-center gap-8">
             <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">Restaurants</a>
