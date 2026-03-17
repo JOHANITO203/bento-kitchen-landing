@@ -44,7 +44,7 @@ const MobileBottomNav = () => {
               )}
               <div className="relative z-10">
                 <link.icon className="w-5 h-5" strokeWidth={active ? 2 : 1.5} />
-                {link.badge && link.badge > 0 && (
+                {typeof link.badge === "number" && link.badge > 0 && (
                   <span className="absolute -top-1.5 -right-2 w-4 h-4 rounded-full bg-primary text-primary-foreground text-[9px] font-bold flex items-center justify-center">
                     {link.badge}
                   </span>
