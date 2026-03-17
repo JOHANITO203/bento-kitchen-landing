@@ -31,16 +31,16 @@ const CategoryItem = ({ labelKey, descKey, image, delay, icon }: CategoryItemPro
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6, delay, ease: [0.2, 0, 0, 1] }}
-        className="group relative overflow-hidden rounded-3xl bg-secondary p-8 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-1 flex flex-col justify-between min-h-[220px] cursor-pointer w-full"
+        className="group relative overflow-hidden rounded-3xl bg-secondary p-5 sm:p-8 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-1 flex flex-col justify-between min-h-[180px] sm:min-h-[220px] cursor-pointer w-full"
       >
         <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-300 rounded-3xl z-[5]" />
 
         <div className="relative z-10">
           <div className="flex items-center gap-2 mb-2">
             <span className="text-primary">{icon}</span>
-            <h3 className="text-xl font-display font-semibold text-foreground">{label}</h3>
+            <h3 className="text-base sm:text-xl font-display font-semibold text-foreground">{label}</h3>
           </div>
-          <p className="text-sm text-muted-foreground font-body leading-relaxed max-w-[60%]">{desc}</p>
+          <p className="text-xs sm:text-sm text-muted-foreground font-body leading-relaxed max-w-[55%] sm:max-w-[60%]">{desc}</p>
         </div>
 
         <div className="relative z-10 mt-4 flex items-center gap-2">
@@ -51,7 +51,7 @@ const CategoryItem = ({ labelKey, descKey, image, delay, icon }: CategoryItemPro
         <img
           src={image}
           alt={label}
-          className="absolute right-4 bottom-2 w-36 h-36 object-contain drop-shadow-2xl transition-transform duration-500 bento-ease group-hover:scale-110 group-hover:-translate-y-1"
+          className="absolute right-2 sm:right-4 bottom-2 w-28 sm:w-36 h-28 sm:h-36 object-contain drop-shadow-2xl transition-transform duration-500 bento-ease group-hover:scale-110 group-hover:-translate-y-1"
         />
       </motion.div>
     </Link>

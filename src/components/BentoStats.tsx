@@ -34,7 +34,7 @@ const BentoStats = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.7, delay: 0.15, ease: [0.2, 0, 0, 1] }}
-      className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-primary/80 p-6 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-0.5 col-span-full lg:col-span-4 flex flex-col justify-between min-h-[160px]"
+      className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-primary/80 p-4 sm:p-6 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-0.5 col-span-full lg:col-span-4 flex flex-col justify-between min-h-[140px] sm:min-h-[160px]"
     >
       {/* Graffiti texture overlay */}
       <img

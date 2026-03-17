@@ -10,7 +10,7 @@ import PageLayout from "@/components/PageLayout";
 const Index = () => {
   return (
     <PageLayout>
-      <div className="grid grid-cols-4 sm:grid-cols-8 lg:grid-cols-12 gap-4 md:gap-5">
+      <div className="grid grid-cols-4 sm:grid-cols-8 lg:grid-cols-12 gap-3 sm:gap-4 md:gap-5">
         <BentoHero />
         <BentoLiveTracker />
         <BentoStats />

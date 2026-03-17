@@ -32,7 +32,7 @@ const BentoFilters = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.7, delay: 0.15, ease: [0.2, 0, 0, 1] }}
-      className="rounded-3xl bg-secondary p-6 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-0.5 col-span-full sm:col-span-6 lg:col-span-4 min-h-[260px]"
+      className="rounded-3xl bg-secondary p-4 sm:p-6 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-0.5 col-span-full sm:col-span-6 lg:col-span-4 min-h-[220px] sm:min-h-[260px]"
     >
       <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
         {t.filters}

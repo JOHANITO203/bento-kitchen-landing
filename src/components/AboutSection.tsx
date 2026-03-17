@@ -21,7 +21,7 @@ const AboutSection = () => {
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.8, ease: [0.2, 0, 0, 1] }}
     >
-      <div className="rounded-3xl bg-card border border-border/50 p-8 md:p-12 overflow-hidden relative">
+      <div className="rounded-3xl bg-card border border-border/50 p-5 sm:p-8 md:p-12 overflow-hidden relative">
         {/* Graffiti texture */}
         <img
           src={graffitiSplash2}
@@ -36,7 +36,7 @@ const AboutSection = () => {
             <span className="inline-block text-xs font-bold tracking-widest uppercase text-primary mb-3">
               {t.aboutTag}
             </span>
-            <h2 className="text-3xl md:text-4xl font-graffiti text-foreground mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-graffiti text-foreground mb-4">
               {t.aboutTitle}
             </h2>
             <p className="text-muted-foreground font-body max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
