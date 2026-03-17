@@ -51,7 +51,7 @@ const CategoryItem = ({ labelKey, descKey, image, delay, icon }: CategoryItemPro
         <img
           src={image}
           alt={label}
-          className="absolute right-2 sm:right-4 bottom-2 w-28 sm:w-36 h-28 sm:h-36 object-contain drop-shadow-2xl transition-transform duration-500 bento-ease group-hover:scale-110 group-hover:-translate-y-1"
+          className="absolute right-1 sm:right-4 bottom-1 sm:bottom-2 w-24 sm:w-36 h-24 sm:h-36 object-contain drop-shadow-2xl transition-transform duration-500 bento-ease group-hover:scale-110 group-hover:-translate-y-1"
         />
       </motion.div>
     </Link>
