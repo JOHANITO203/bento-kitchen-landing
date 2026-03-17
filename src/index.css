@@ -101,6 +101,30 @@
     box-shadow: var(--shadow-bento-hover);
   }
 
+  .shadow-glow-primary {
+    box-shadow: var(--shadow-glow-primary);
+  }
+
+  .shadow-glow-primary-hover {
+    box-shadow: var(--shadow-glow-primary-hover);
+  }
+
+  .shadow-glow-accent {
+    box-shadow: var(--shadow-glow-accent);
+  }
+
+  .shadow-glow-accent-hover {
+    box-shadow: var(--shadow-glow-accent-hover);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .shadow-elevated-hover {
+    box-shadow: var(--shadow-elevated-hover);
+  }
+
   .bento-ease {
     transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
   }
