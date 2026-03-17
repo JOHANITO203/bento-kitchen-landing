@@ -229,5 +229,7 @@ const AccountPage = () => {
           )}
         </AnimatePresence>
     </PageLayout>
+  );
+};
 
 export default AccountPage;
