@@ -109,9 +109,7 @@ const CategoryPage = () => {
         </div>
       </main>
 
-      <Footer />
-      <CartDrawer />
-    </div>
+    </PageLayout>
   );
 };
 

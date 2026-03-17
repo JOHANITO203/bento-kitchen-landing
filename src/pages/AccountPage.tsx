@@ -228,12 +228,6 @@ const AccountPage = () => {
             </motion.div>
           )}
         </AnimatePresence>
-      </main>
-
-      <Footer />
-      <CartDrawer />
-    </div>
-  );
-};
+    </PageLayout>
 
 export default AccountPage;

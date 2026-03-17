@@ -206,11 +206,8 @@ const OffersPage = () => {
             <PromoCard key={offer.id} offer={offer} index={i} />
           ))}
         </div>
-      </main>
-
-      <Footer />
-      <CartDrawer />
-    </div>
+      </div>
+    </PageLayout>
   );
 };
 

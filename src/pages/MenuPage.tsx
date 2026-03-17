@@ -224,11 +224,7 @@ const MenuPage = () => {
             <p className="text-lg text-muted-foreground font-body">{t.noResults}</p>
           </motion.div>
         )}
-      </main>
-
-      <Footer />
-      <CartDrawer />
-    </div>
+    </PageLayout>
   );
 };
 
