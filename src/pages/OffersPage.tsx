@@ -1,18 +1,12 @@
 import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowRight, Clock, Flame, Sparkles, Timer, CalendarDays, Plus, Percent } from "lucide-react";
-import woodBg from "@/assets/wood-bg.jpg";
-const cutleryIcon = "/favicon.png";
+import { ArrowRight, Clock, Flame, Sparkles, Timer, CalendarDays, Plus, Percent } from "lucide-react";
 import heroOffers from "@/assets/heroes/hero-offers.jpg";
 import graffitiSplash from "@/assets/graffiti-splash-1.png";
 import { useLang } from "@/context/LanguageContext";
 import { useCart } from "@/context/CartContext";
 import { promoOfTheDay, discountedDishes, type PromoOffer } from "@/data/offersData";
-import CartButton from "@/components/CartButton";
-import CartDrawer from "@/components/CartDrawer";
-import LanguageToggle from "@/components/LanguageToggle";
-import Footer from "@/components/Footer";
+import PageLayout from "@/components/PageLayout";
 
 const badgeConfig: Record<string, { icon: React.ReactNode; labelRu: string; labelEn: string; colorClass: string }> = {
   hot: { icon: <Flame className="w-3 h-3" />, labelRu: "Горячее", labelEn: "Hot", colorClass: "bg-destructive/20 text-destructive" },
