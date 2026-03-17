@@ -61,7 +61,6 @@ const translations = {
     order: "Заказать",
     currency: "₽",
     // Dishes
-    taginePremiun: "Тажин Премиум",
     jollofSpecial: "Джолоф Специальный",
     mafeClassic: "Мафе Классик",
     // Address
