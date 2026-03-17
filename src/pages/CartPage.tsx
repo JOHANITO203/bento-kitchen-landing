@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, Minus, Plus, Trash2, ShoppingBag, MapPin, Phone, MessageSquare, Truck, Store, Clock, ChevronRight, CheckCircle2 } from "lucide-react";
 import { z } from "zod";
 import woodBg from "@/assets/wood-bg.jpg";
-import cutleryIcon from "@/assets/icon-cutlery-graffiti.png";
+const cutleryIcon = "/favicon.png";
 import { useLang } from "@/context/LanguageContext";
 import { useCart } from "@/context/CartContext";
 import CartDrawer from "@/components/CartDrawer";
@@ -112,7 +112,7 @@ const CartPage = () => {
               <ArrowLeft className="w-5 h-5" strokeWidth={1.5} />
             </button>
             <h2 className="text-xl font-graffiti text-foreground flex items-center gap-2">
-              <img src={cutleryIcon} alt="" className="w-7 h-7 object-contain invert" />
+              <img src={cutleryIcon} alt="Солнце Африки" className="w-8 h-8 object-contain" />
               солнце<span className="text-primary"> Африки</span>
             </h2>
           </div>

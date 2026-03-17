@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Clock, Flame, Sparkles, Timer, CalendarDays, Plus, Percent } from "lucide-react";
 import woodBg from "@/assets/wood-bg.jpg";
-import cutleryIcon from "@/assets/icon-cutlery-graffiti.png";
+const cutleryIcon = "/favicon.png";
 import heroOffers from "@/assets/heroes/hero-offers.jpg";
 import graffitiSplash from "@/assets/graffiti-splash-1.png";
 import { useLang } from "@/context/LanguageContext";
@@ -128,7 +128,7 @@ const OffersPage = () => {
               <ArrowLeft className="w-5 h-5" strokeWidth={1.5} />
             </Link>
             <h2 className="text-xl font-graffiti text-foreground flex items-center gap-2">
-              <img src={cutleryIcon} alt="" className="w-7 h-7 object-contain invert" />
+              <img src={cutleryIcon} alt="Солнце Африки" className="w-8 h-8 object-contain" />
               солнце<span className="text-primary"> Африки</span>
             </h2>
           </div>
