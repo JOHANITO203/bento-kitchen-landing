@@ -14,7 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Instrument Sans"', 'system-ui', 'sans-serif'],
+        display: ['"Permanent Marker"', '"Instrument Sans"', 'system-ui', 'sans-serif'],
+        graffiti: ['"Rubik Spray Paint"', '"Permanent Marker"', 'cursive'],
         body: ['"Geist"', 'system-ui', 'sans-serif'],
       },
       colors: {
