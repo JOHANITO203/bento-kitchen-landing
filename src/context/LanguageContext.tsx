@@ -96,7 +96,7 @@ const translations = {
 interface LanguageContextType {
   lang: Lang;
   setLang: (lang: Lang) => void;
-  t: (typeof translations)["ru"];
+  t: Record<string, string>;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
