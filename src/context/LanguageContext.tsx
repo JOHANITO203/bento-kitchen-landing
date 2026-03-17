@@ -59,6 +59,16 @@ const translations = {
     // Address
     addressPlaceholder: "Введите ваш адрес доставки",
     deliveryAddress: "Адрес доставки",
+    // About
+    aboutTag: "О нас",
+    aboutTitle: "Союз двух культур",
+    aboutDesc: "Солнце Африки — это проект, рождённый из желания познакомить Россию с богатством африканской кухни. Мы не просто готовим — мы адаптируем аутентичные рецепты для русского вкуса, создавая уникальный союз двух культур. Это больше, чем еда — это мост между континентами, созданный для удовольствия каждого.",
+    aboutValue1Title: "Культурный мост",
+    aboutValue1Desc: "Мы объединяем африканские традиции и русские вкусы в каждом блюде — настоящий брак культур.",
+    aboutValue2Title: "С любовью к каждому",
+    aboutValue2Desc: "Каждый рецепт адаптирован с заботой, чтобы вы открыли новые вкусы без границ.",
+    aboutValue3Title: "Аутентичные рецепты",
+    aboutValue3Desc: "Настоящие африканские блюда, приготовленные с уважением к традициям и свежими ингредиентами.",
   },
   en: {
     menu: "Menu",
@@ -106,6 +116,15 @@ const translations = {
     mafeClassic: "Mafé Classic",
     addressPlaceholder: "Enter your delivery address",
     deliveryAddress: "Delivery address",
+    aboutTag: "About us",
+    aboutTitle: "A union of two cultures",
+    aboutDesc: "Солнце Африки was born from the desire to introduce Russia to the richness of African cuisine. We don't just cook — we adapt authentic recipes for Russian tastes, creating a unique marriage of two cultures. It's more than food — it's a bridge between continents, made for the enjoyment of all.",
+    aboutValue1Title: "Cultural bridge",
+    aboutValue1Desc: "We blend African traditions with Russian palates in every dish — a true marriage of cultures.",
+    aboutValue2Title: "Made with love",
+    aboutValue2Desc: "Every recipe is carefully adapted so you can discover new flavors without borders.",
+    aboutValue3Title: "Authentic recipes",
+    aboutValue3Desc: "Real African dishes prepared with respect for tradition and the freshest ingredients.",
   },
 } as const;
 
