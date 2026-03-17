@@ -63,6 +63,7 @@ const translations = {
     // Dishes
     jollofSpecial: "Джолоф Специальный",
     mafeClassic: "Мафе Классик",
+    thiebRoyal: "Тьебудьен Роял",
     // Address
     addressPlaceholder: "Введите ваш адрес доставки",
     deliveryAddress: "Адрес доставки",
