@@ -33,7 +33,7 @@ const Index = () => {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-6">
-            <a href="#menu" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">{t.menu}</a>
+            <Link to="/menu" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">{t.menu}</Link>
             <a href="#categories" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">{t.categories}</a>
             <a href="#offers" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">{t.offers}</a>
           </nav>
