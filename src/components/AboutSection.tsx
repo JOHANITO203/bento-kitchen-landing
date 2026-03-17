@@ -1,5 +1,6 @@
 import { useLang } from "@/context/LanguageContext";
 import { Heart, Globe, Utensils } from "lucide-react";
+import { motion } from "framer-motion";
 
 const AboutSection = () => {
   const { t } = useLang();
