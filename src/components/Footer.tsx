@@ -1,5 +1,6 @@
 import { useLang } from "@/context/LanguageContext";
 import { MapPin, Phone, Mail, Clock, ExternalLink } from "lucide-react";
+import { motion } from "framer-motion";
 
 const VKIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
