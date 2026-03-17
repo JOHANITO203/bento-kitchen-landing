@@ -12,11 +12,6 @@ import filterStarred from "@/assets/filter-starred.png";
 import filterHealthy from "@/assets/filter-healthy.png";
 import filterNew from "@/assets/filter-new.png";
 
-import filterVegetarian from "@/assets/filter-vegetarian.png";
-import filterFast from "@/assets/filter-fast.png";
-import filterStarred from "@/assets/filter-starred.png";
-import filterHealthy from "@/assets/filter-healthy.png";
-import filterNew from "@/assets/filter-new.png";
 
 const categoryIcons: Record<CategoryKey, React.ReactNode> = {
   popular: <Star className="w-4 h-4" strokeWidth={1.5} />,
