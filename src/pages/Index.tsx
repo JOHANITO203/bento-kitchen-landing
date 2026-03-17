@@ -59,7 +59,7 @@ const Index = () => {
         {mobileMenuOpen && (
           <div className="md:hidden border-t border-border/50 bg-background/95 backdrop-blur-xl">
             <nav className="container flex flex-col gap-1 py-3">
-              <a href="#menu" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body py-2">{t.menu}</a>
+              <Link to="/menu" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body py-2">{t.menu}</Link>
               <a href="#categories" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body py-2">{t.categories}</a>
               <a href="#offers" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body py-2">{t.offers}</a>
               <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body py-2 flex items-center gap-2">
