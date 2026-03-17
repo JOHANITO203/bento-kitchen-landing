@@ -13,7 +13,7 @@ const BentoLiveTracker = () => {
       <img
         src={heroDishes}
         alt="African dishes"
-        className="w-full h-full object-cover bg-secondary" />
+        className="w-full h-full object-cover bg-background" />
       
     </motion.div>);
 
