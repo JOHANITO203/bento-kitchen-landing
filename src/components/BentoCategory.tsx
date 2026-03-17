@@ -1,14 +1,19 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useLang } from "@/context/LanguageContext";
 
 interface BentoCategoryProps {
-  label: string;
-  title: string;
+  labelKey: string;
+  titleKey: string;
   image: string;
   delay?: number;
 }
 
-const BentoCategory = ({ label, title, image, delay = 0 }: BentoCategoryProps) => {
+const BentoCategory = ({ labelKey, titleKey, image, delay = 0 }: BentoCategoryProps) => {
+  const { t } = useLang();
+  const label = t[labelKey] || labelKey;
+  const title = t[titleKey] || titleKey;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -26,7 +31,7 @@ const BentoCategory = ({ label, title, image, delay = 0 }: BentoCategoryProps) =
       </div>
 
       <div className="relative z-10 mt-8 flex items-center gap-2">
-        <span className="text-sm font-medium text-primary font-body">Découvrir</span>
+        <span className="text-sm font-medium text-primary font-body">{t.discover}</span>
         <ArrowRight className="w-4 h-4 text-primary transition-transform duration-300 bento-ease group-hover:translate-x-1" strokeWidth={1.5} />
       </div>
 
