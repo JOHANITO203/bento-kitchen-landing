@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, Star, Flame, UtensilsCrossed, Sandwich, GlassWater, Cake, Package, SlidersHorizontal, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import woodBg from "@/assets/wood-bg.jpg";
-import cutleryIcon from "@/assets/icon-cutlery-graffiti.png";
+const cutleryIcon = "/favicon.png";
 import { useLang } from "@/context/LanguageContext";
 import { dishes, categoryKeys, type CategoryKey, type Badge } from "@/data/menuData";
 import DishCard from "@/components/DishCard";

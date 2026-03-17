@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Mail, Lock, User, Phone, MapPin, LogOut, Save, Eye, EyeOff, ChevronRight } from "lucide-react";
 import woodBg from "@/assets/wood-bg.jpg";
-import cutleryIcon from "@/assets/icon-cutlery-graffiti.png";
+const cutleryIcon = "/favicon.png";
 import { useLang } from "@/context/LanguageContext";
 import LanguageToggle from "@/components/LanguageToggle";
 import CartButton from "@/components/CartButton";

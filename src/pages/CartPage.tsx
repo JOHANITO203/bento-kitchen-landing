@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, Minus, Plus, Trash2, ShoppingBag, MapPin, Phone, MessageSquare, Truck, Store, Clock, ChevronRight, CheckCircle2 } from "lucide-react";
 import { z } from "zod";
 import woodBg from "@/assets/wood-bg.jpg";
-import cutleryIcon from "@/assets/icon-cutlery-graffiti.png";
+const cutleryIcon = "/favicon.png";
 import { useLang } from "@/context/LanguageContext";
 import { useCart } from "@/context/CartContext";
 import CartDrawer from "@/components/CartDrawer";

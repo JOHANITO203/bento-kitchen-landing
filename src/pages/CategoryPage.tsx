@@ -3,7 +3,7 @@ import { useMemo } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import woodBg from "@/assets/wood-bg.jpg";
-import cutleryIcon from "@/assets/icon-cutlery-graffiti.png";
+const cutleryIcon = "/favicon.png";
 import { useLang } from "@/context/LanguageContext";
 import { categoriesConfig } from "@/data/categoriesConfig";
 import { dishes, type CategoryKey } from "@/data/menuData";

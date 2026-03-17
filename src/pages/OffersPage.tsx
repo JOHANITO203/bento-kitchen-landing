@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Clock, Flame, Sparkles, Timer, CalendarDays, Plus, Percent } from "lucide-react";
 import woodBg from "@/assets/wood-bg.jpg";
-import cutleryIcon from "@/assets/icon-cutlery-graffiti.png";
+const cutleryIcon = "/favicon.png";
 import heroOffers from "@/assets/heroes/hero-offers.jpg";
 import graffitiSplash from "@/assets/graffiti-splash-1.png";
 import { useLang } from "@/context/LanguageContext";
