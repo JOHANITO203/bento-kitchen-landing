@@ -40,7 +40,7 @@ const BentoStats = () => {
       <img
         src={graffitiSplash}
         alt=""
-        className="absolute -bottom-8 -left-8 w-48 h-48 object-contain opacity-15 pointer-events-none rotate-180"
+        className="absolute -bottom-8 -left-8 w-56 h-56 object-contain opacity-20 pointer-events-none rotate-180"
       />
 
       {/* Badge */}

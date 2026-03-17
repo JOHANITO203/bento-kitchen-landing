@@ -19,7 +19,7 @@ const BentoHero = () => {
       <img
         src={graffitiSplash}
         alt=""
-        className="absolute -top-10 -right-10 w-72 h-72 object-contain opacity-20 pointer-events-none rotate-12"
+        className="absolute -top-10 -right-10 w-80 h-80 object-contain opacity-25 pointer-events-none rotate-12"
       />
 
       <div className="relative z-10">
@@ -49,7 +49,7 @@ const BentoHero = () => {
       <motion.img
         src={graffitiTag}
         alt=""
-        className="absolute bottom-3 right-4 w-28 h-auto opacity-15 pointer-events-none"
+        className="absolute bottom-3 right-4 w-32 h-auto opacity-25 pointer-events-none"
         animate={{ rotate: [-2, 2, -2] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
