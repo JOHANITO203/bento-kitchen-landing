@@ -78,11 +78,8 @@ const CategoriesPage = () => {
             );
           })}
         </div>
-      </main>
-
-      <Footer />
-      <CartDrawer />
-    </div>
+      </div>
+    </PageLayout>
   );
 };
 
