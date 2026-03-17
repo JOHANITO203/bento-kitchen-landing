@@ -91,6 +91,13 @@ const translations = {
     footerPrivacy: "Политика конфиденциальности",
     footerTerms: "Условия использования",
     footerCookies: "Файлы cookie",
+    // Menu page
+    menuPageTitle: "Наше меню",
+    menuPageSubtitle: "Выберите ваше африканское блюдо — каждое приготовлено с душой.",
+    allDishes: "Все",
+    addToCart: "Добавить",
+    clearFilters: "Сбросить",
+    noResults: "Ничего не найдено. Попробуйте другие фильтры.",
   },
   en: {
     menu: "Menu",
@@ -168,6 +175,13 @@ const translations = {
     footerPrivacy: "Privacy Policy",
     footerTerms: "Terms of Service",
     footerCookies: "Cookies",
+    // Menu page
+    menuPageTitle: "Our Menu",
+    menuPageSubtitle: "Choose your African dish — each one crafted with soul.",
+    allDishes: "All",
+    addToCart: "Add",
+    clearFilters: "Clear",
+    noResults: "Nothing found. Try different filters.",
   },
 } as const;
 
