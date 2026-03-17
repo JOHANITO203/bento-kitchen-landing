@@ -1,15 +1,10 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import woodBg from "@/assets/wood-bg.jpg";
-const cutleryIcon = "/favicon.png";
+import { ArrowRight } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
 import { categoriesConfig } from "@/data/categoriesConfig";
 import { dishes } from "@/data/menuData";
-import CartButton from "@/components/CartButton";
-import CartDrawer from "@/components/CartDrawer";
-import LanguageToggle from "@/components/LanguageToggle";
-import Footer from "@/components/Footer";
+import PageLayout from "@/components/PageLayout";
 
 const CategoriesPage = () => {
   const { t } = useLang();
