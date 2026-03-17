@@ -1,12 +1,14 @@
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { useCart } from "@/context/CartContext";
 import { useLang } from "@/context/LanguageContext";
-import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
+import { Minus, Plus, Trash2, ShoppingBag, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const CartDrawer = () => {
   const { items, isOpen, setIsOpen, updateQuantity, removeItem, totalItems, totalPrice } = useCart();
   const { t } = useLang();
+  const navigate = useNavigate();
 
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -84,8 +86,12 @@ const CartDrawer = () => {
                 {totalPrice} {t.currency}
               </span>
             </div>
-            <button className="w-full rounded-xl bg-primary px-5 py-3.5 text-sm font-semibold text-primary-foreground transition-all duration-300 bento-ease hover:scale-[1.01] active:scale-[0.99]">
-              {t.order} — {totalPrice} {t.currency}
+            <button
+              onClick={() => { setIsOpen(false); navigate("/cart"); }}
+              className="w-full rounded-xl bg-primary px-5 py-3.5 text-sm font-semibold text-primary-foreground transition-all duration-300 bento-ease hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2"
+            >
+              {t.goToCart || t.order} — {totalPrice} {t.currency}
+              <ArrowRight className="w-4 h-4" strokeWidth={2} />
             </button>
           </div>
         )}
