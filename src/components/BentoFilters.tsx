@@ -2,17 +2,22 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { useState } from "react";
 import { useLang } from "@/context/LanguageContext";
+import filterVegetarian from "@/assets/filter-vegetarian.png";
+import filterFast from "@/assets/filter-fast.png";
+import filterStarred from "@/assets/filter-starred.png";
+import filterHealthy from "@/assets/filter-healthy.png";
+import filterNew from "@/assets/filter-new.png";
 
 const BentoFilters = () => {
   const { t } = useLang();
   const [selected, setSelected] = useState<string[]>([]);
 
   const filters = [
-    { label: t.vegetarian, emoji: "🌿" },
-    { label: t.fast, emoji: "⚡" },
-    { label: t.starred, emoji: "⭐" },
-    { label: t.healthyFilter, emoji: "🥗" },
-    { label: t.newFilter, emoji: "✨" },
+    { label: t.vegetarian, icon: filterVegetarian },
+    { label: t.fast, icon: filterFast },
+    { label: t.starred, icon: filterStarred },
+    { label: t.healthyFilter, icon: filterHealthy },
+    { label: t.newFilter, icon: filterNew },
   ];
 
   const toggle = (label: string) => {
