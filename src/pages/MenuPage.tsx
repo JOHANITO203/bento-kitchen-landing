@@ -168,6 +168,7 @@ const CategoryTabs = ({ activeCategory, setActiveCategory, categoryIcons, filter
   );
 };
 
+const MenuPage = () => {
   const { t } = useLang();
   const [activeCategory, setActiveCategory] = useState<CategoryKey | "all">("all");
   const [activeFilters, setActiveFilters] = useState<Badge[]>([]);
