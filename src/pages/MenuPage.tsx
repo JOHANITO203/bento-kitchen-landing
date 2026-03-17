@@ -151,12 +151,12 @@ const MenuPage = () => {
         </AnimatePresence>
 
         {/* Category tabs */}
-        <div className="flex gap-2 overflow-x-auto pb-4 mb-6 scrollbar-hide items-center">
+        <div className="flex gap-1.5 sm:gap-2 overflow-x-auto pb-2 mb-6 scrollbar-hide items-center snap-x snap-mandatory -mx-4 px-4 sm:mx-0 sm:px-0">
           {/* Mobile filter button */}
-          <div className="md:hidden shrink-0">{filterButton}</div>
+          <div className="md:hidden shrink-0 snap-start">{filterButton}</div>
           <button
             onClick={() => setActiveCategory("all")}
-            className={`shrink-0 flex items-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-medium transition-all duration-300 bento-ease ${
+            className={`shrink-0 snap-start flex items-center gap-1.5 sm:gap-2 rounded-2xl px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-medium transition-all duration-300 bento-ease ${
               activeCategory === "all"
                 ? "bg-primary text-primary-foreground shadow-bento"
                 : "bg-secondary text-muted-foreground hover:text-foreground"
@@ -168,7 +168,7 @@ const MenuPage = () => {
             <button
               key={key}
               onClick={() => setActiveCategory(key)}
-              className={`shrink-0 flex items-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-medium transition-all duration-300 bento-ease ${
+              className={`shrink-0 snap-start flex items-center gap-1.5 sm:gap-2 rounded-2xl px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-medium transition-all duration-300 bento-ease ${
                 activeCategory === key
                   ? "bg-primary text-primary-foreground shadow-bento"
                   : "bg-secondary text-muted-foreground hover:text-foreground"
