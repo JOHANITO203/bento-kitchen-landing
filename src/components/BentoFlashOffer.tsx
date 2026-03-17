@@ -11,9 +11,9 @@ const BentoFlashOffer = () => {
   const { t } = useLang();
 
   const dishes = [
-    { id: "tagine-premium", name: t.pastaTruffle, price: 1490, image: tagineImg },
-    { id: "jollof-special", name: t.pokeSalmon, price: 1250, image: jollofImg },
-    { id: "mafe-classic", name: t.pastaCarbonara, price: 1150, image: mafeImg },
+    { id: "tagine-premium", name: t.taginePremiun, price: 1490, image: tagineImg },
+    { id: "jollof-special", name: t.jollofSpecial, price: 1250, image: jollofImg },
+    { id: "mafe-classic", name: t.mafeClassic, price: 1150, image: mafeImg },
   ];
 
   return (
@@ -29,7 +29,7 @@ const BentoFlashOffer = () => {
             {t.discount}
           </span>
           <h3 className="mt-3 text-xl md:text-2xl font-display font-semibold text-foreground">
-            {t.italianSelection}
+            {t.africanCuisine}
           </h3>
         </div>
         <div className="flex items-center gap-2 text-sm font-medium text-primary cursor-pointer">

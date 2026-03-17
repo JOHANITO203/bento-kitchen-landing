@@ -47,7 +47,7 @@ const CartDrawer = () => {
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium text-foreground font-body truncate">{item.name}</p>
                   <p className="text-sm font-semibold text-primary tabular-nums mt-0.5">
-                    {(item.price * item.quantity)} {t.currency}
+                    {item.price * item.quantity} {t.currency}
                   </p>
                 </div>
                 <div className="flex items-center gap-1.5 shrink-0">
