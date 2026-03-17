@@ -4,12 +4,12 @@ import { useLang } from "@/context/LanguageContext";
 import { useCart } from "@/context/CartContext";
 import { useState, useEffect } from "react";
 import jollofImg from "@/assets/jollof.png";
+import graffitiSplash from "@/assets/graffiti-splash-1.png";
 
 const BentoStats = () => {
   const { t } = useLang();
   const { addItem } = useCart();
 
-  // Countdown timer (fake 2h promo)
   const [timeLeft, setTimeLeft] = useState({ h: 1, m: 47, s: 33 });
 
   useEffect(() => {
@@ -36,10 +36,17 @@ const BentoStats = () => {
       transition={{ duration: 0.7, delay: 0.15, ease: [0.2, 0, 0, 1] }}
       className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-primary/80 p-6 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-0.5 col-span-full lg:col-span-4 flex flex-col justify-between min-h-[160px]"
     >
+      {/* Graffiti texture overlay */}
+      <img
+        src={graffitiSplash}
+        alt=""
+        className="absolute -bottom-8 -left-8 w-48 h-48 object-contain opacity-15 pointer-events-none rotate-180"
+      />
+
       {/* Badge */}
       <div className="flex items-center gap-2">
-        <Flame className="w-4 h-4 text-primary-foreground" strokeWidth={2} />
-        <span className="text-xs font-semibold uppercase tracking-widest text-primary-foreground/80">
+        <Flame className="w-4 h-4 text-primary-foreground" strokeWidth={2.5} />
+        <span className="text-xs font-bold uppercase tracking-widest text-primary-foreground/80 font-display">
           {t.promoTag || "Акция дня"}
         </span>
       </div>
@@ -50,7 +57,7 @@ const BentoStats = () => {
           <p className="text-sm text-primary-foreground/70 font-body line-through tabular-nums">
             1 250 {t.currency}
           </p>
-          <p className="text-2xl font-display font-bold text-primary-foreground tabular-nums">
+          <p className="text-2xl font-graffiti text-primary-foreground tabular-nums">
             890 {t.currency}
           </p>
           <p className="text-xs text-primary-foreground/70 font-body mt-1 truncate">
@@ -59,8 +66,8 @@ const BentoStats = () => {
 
           {/* Countdown */}
           <div className="flex items-center gap-1.5 mt-3">
-            <Clock className="w-3.5 h-3.5 text-primary-foreground/60" strokeWidth={1.5} />
-            <div className="flex items-center gap-1 font-display text-sm font-semibold text-primary-foreground tabular-nums">
+            <Clock className="w-3.5 h-3.5 text-primary-foreground/60" strokeWidth={2} />
+            <div className="flex items-center gap-1 font-display text-sm font-bold text-primary-foreground tabular-nums">
               <span className="bg-primary-foreground/20 rounded-md px-1.5 py-0.5">{pad(timeLeft.h)}</span>
               <span className="text-primary-foreground/50">:</span>
               <span className="bg-primary-foreground/20 rounded-md px-1.5 py-0.5">{pad(timeLeft.m)}</span>
@@ -70,23 +77,22 @@ const BentoStats = () => {
           </div>
         </div>
 
-        {/* Dish image */}
         <motion.img
           src={jollofImg}
           alt="Promo"
           className="w-20 h-20 object-contain drop-shadow-lg shrink-0"
-          animate={{ rotate: [0, 3, -3, 0] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          animate={{ rotate: [0, 5, -5, 0] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
         />
       </div>
 
       {/* CTA */}
       <button
         onClick={() => addItem({ id: "promo-jollof", name: t.jollofSpecial, price: 890, image: jollofImg })}
-        className="mt-3 flex items-center justify-center gap-2 w-full rounded-xl bg-primary-foreground/20 backdrop-blur-sm px-4 py-2.5 text-xs font-semibold text-primary-foreground transition-all duration-200 hover:bg-primary-foreground/30 active:scale-[0.98]"
+        className="mt-3 flex items-center justify-center gap-2 w-full rounded-xl bg-primary-foreground/20 backdrop-blur-sm px-4 py-2.5 text-xs font-bold text-primary-foreground uppercase tracking-wide transition-all duration-200 hover:bg-primary-foreground/30 active:scale-[0.98]"
       >
         {t.orderNow || "Заказать"}
-        <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
+        <ArrowRight className="w-3.5 h-3.5" strokeWidth={2.5} />
       </button>
     </motion.div>
   );
