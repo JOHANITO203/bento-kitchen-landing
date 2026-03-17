@@ -1,8 +1,9 @@
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { useCart } from "@/context/CartContext";
 import { useLang } from "@/context/LanguageContext";
-import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
+import { Minus, Plus, Trash2, ShoppingBag, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const CartDrawer = () => {
   const { items, isOpen, setIsOpen, updateQuantity, removeItem, totalItems, totalPrice } = useCart();
