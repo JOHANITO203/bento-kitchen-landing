@@ -32,16 +32,16 @@ const CategoryItem = ({ labelKey, descKey, image, delay, span = "col-span-full s
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6, delay, ease: [0.2, 0, 0, 1] }}
-        className={`group relative overflow-hidden rounded-3xl bg-secondary p-6 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-1 ${span} flex flex-col justify-between min-h-[200px] cursor-pointer`}
+        className={`group relative overflow-hidden rounded-3xl bg-secondary p-8 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-1 ${span} flex flex-col justify-between min-h-[260px] cursor-pointer`}
       >
         <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-300 rounded-3xl z-[5]" />
 
         <div className="relative z-10">
           <div className="flex items-center gap-2 mb-1">
             <span className="text-primary">{icon}</span>
-            <h3 className="text-lg font-display font-semibold text-foreground">{label}</h3>
+            <h3 className="text-xl font-display font-semibold text-foreground">{label}</h3>
           </div>
-          <p className="text-xs text-muted-foreground font-body leading-relaxed max-w-[60%]">{desc}</p>
+          <p className="text-sm text-muted-foreground font-body leading-relaxed max-w-[55%]">{desc}</p>
         </div>
 
         <div className="relative z-10 mt-4 flex items-center gap-2">
@@ -52,7 +52,7 @@ const CategoryItem = ({ labelKey, descKey, image, delay, span = "col-span-full s
         <img
           src={image}
           alt={label}
-          className="absolute -right-2 -bottom-2 w-32 h-32 object-contain drop-shadow-2xl transition-transform duration-500 bento-ease group-hover:scale-110 group-hover:-translate-y-1"
+          className="absolute -right-2 -bottom-2 w-40 h-40 object-contain drop-shadow-2xl transition-transform duration-500 bento-ease group-hover:scale-110 group-hover:-translate-y-1"
         />
       </motion.div>
     </Link>
@@ -60,13 +60,13 @@ const CategoryItem = ({ labelKey, descKey, image, delay, span = "col-span-full s
 };
 
 const categories = [
-  { labelKey: "popular", descKey: "popularDesc", image: populairesImg, span: "col-span-full sm:col-span-4", icon: <Star className="w-4 h-4" strokeWidth={1.5} /> },
-  { labelKey: "grillades", descKey: "grilladesDesc", image: grilladesImg, span: "col-span-full sm:col-span-4", icon: <Flame className="w-4 h-4" strokeWidth={1.5} /> },
-  { labelKey: "traditionalDishes", descKey: "traditionalDesc", image: traditionnelsImg, span: "col-span-full sm:col-span-4", icon: <UtensilsCrossed className="w-4 h-4" strokeWidth={1.5} /> },
-  { labelKey: "streetFood", descKey: "streetFoodDesc", image: streetfoodImg, span: "col-span-full sm:col-span-4", icon: <Sandwich className="w-4 h-4" strokeWidth={1.5} /> },
-  { labelKey: "drinks", descKey: "drinksDesc", image: boissonsImg, span: "col-span-full sm:col-span-4", icon: <GlassWater className="w-4 h-4" strokeWidth={1.5} /> },
-  { labelKey: "desserts", descKey: "dessertsDesc", image: dessertsImg, span: "col-span-full sm:col-span-4", icon: <Cake className="w-4 h-4" strokeWidth={1.5} /> },
-  { labelKey: "combo", descKey: "comboDesc", image: comboImg, span: "col-span-full sm:col-span-4", icon: <Package className="w-4 h-4" strokeWidth={1.5} /> },
+  { labelKey: "popular", descKey: "popularDesc", image: populairesImg, span: "col-span-full sm:col-span-6", icon: <Star className="w-5 h-5" strokeWidth={1.5} /> },
+  { labelKey: "grillades", descKey: "grilladesDesc", image: grilladesImg, span: "col-span-full sm:col-span-6", icon: <Flame className="w-5 h-5" strokeWidth={1.5} /> },
+  { labelKey: "traditionalDishes", descKey: "traditionalDesc", image: traditionnelsImg, span: "col-span-full sm:col-span-6", icon: <UtensilsCrossed className="w-5 h-5" strokeWidth={1.5} /> },
+  { labelKey: "streetFood", descKey: "streetFoodDesc", image: streetfoodImg, span: "col-span-full sm:col-span-6", icon: <Sandwich className="w-5 h-5" strokeWidth={1.5} /> },
+  { labelKey: "drinks", descKey: "drinksDesc", image: boissonsImg, span: "col-span-full sm:col-span-6", icon: <GlassWater className="w-5 h-5" strokeWidth={1.5} /> },
+  { labelKey: "desserts", descKey: "dessertsDesc", image: dessertsImg, span: "col-span-full sm:col-span-6", icon: <Cake className="w-5 h-5" strokeWidth={1.5} /> },
+  { labelKey: "combo", descKey: "comboDesc", image: comboImg, span: "col-span-full sm:col-span-12", icon: <Package className="w-5 h-5" strokeWidth={1.5} /> },
 ];
 
 const CategoryGrid = () => {
