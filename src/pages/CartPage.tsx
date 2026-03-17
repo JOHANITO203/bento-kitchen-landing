@@ -1,15 +1,12 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
-import { ArrowLeft, Minus, Plus, Trash2, ShoppingBag, MapPin, Phone, MessageSquare, Truck, Store, Clock, ChevronRight, CheckCircle2 } from "lucide-react";
+import { Minus, Plus, Trash2, ShoppingBag, MapPin, Phone, MessageSquare, Truck, Store, Clock, ChevronRight, CheckCircle2 } from "lucide-react";
 import { z } from "zod";
 import woodBg from "@/assets/wood-bg.jpg";
-const cutleryIcon = "/favicon.png";
 import { useLang } from "@/context/LanguageContext";
 import { useCart } from "@/context/CartContext";
-import CartDrawer from "@/components/CartDrawer";
-import LanguageToggle from "@/components/LanguageToggle";
-import Footer from "@/components/Footer";
+import PageLayout from "@/components/PageLayout";
 
 type DeliveryMode = "delivery" | "pickup";
 
