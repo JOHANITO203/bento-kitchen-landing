@@ -1,14 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
-import { ArrowLeft, Mail, Lock, User, Phone, MapPin, LogOut, Save, Eye, EyeOff, ChevronRight } from "lucide-react";
-import woodBg from "@/assets/wood-bg.jpg";
-const cutleryIcon = "/favicon.png";
+import { Mail, Lock, User, Phone, MapPin, LogOut, Save, Eye, EyeOff, ChevronRight } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
-import LanguageToggle from "@/components/LanguageToggle";
-import CartButton from "@/components/CartButton";
-import CartDrawer from "@/components/CartDrawer";
-import Footer from "@/components/Footer";
+import PageLayout from "@/components/PageLayout";
 
 type View = "login" | "register" | "profile";
 
