@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Star, Flame, UtensilsCrossed, Sandwich, GlassWater, Cake, Package } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useLang } from "@/context/LanguageContext";
 
 import populairesImg from "@/assets/populaires.png";
