@@ -52,7 +52,7 @@ const CategoryItem = ({ labelKey, descKey, image, delay, span = "col-span-full s
         <img
           src={image}
           alt={label}
-          className="absolute -right-2 -bottom-2 w-32 h-32 object-contain drop-shadow-2xl transition-transform duration-500 bento-ease group-hover:scale-110 group-hover:-translate-y-1"
+          className="absolute -right-2 -bottom-2 w-40 h-40 object-contain drop-shadow-2xl transition-transform duration-500 bento-ease group-hover:scale-110 group-hover:-translate-y-1"
         />
       </motion.div>
     </Link>
