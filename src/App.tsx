@@ -11,6 +11,7 @@ import CategoriesPage from "./pages/CategoriesPage.tsx";
 import CategoryPage from "./pages/CategoryPage.tsx";
 import OffersPage from "./pages/OffersPage.tsx";
 import CartPage from "./pages/CartPage.tsx";
+import AccountPage from "./pages/AccountPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
