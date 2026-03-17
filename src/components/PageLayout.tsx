@@ -26,7 +26,7 @@ const PageLayout = ({
   backNav,
   headerActions,
   hideCart,
-  mainClassName = "container px-3 sm:px-4 py-4 sm:py-6 md:py-10",
+  mainClassName = "container py-4 sm:py-6 md:py-10",
   hideFooter,
 }: PageLayoutProps) => {
   return (
