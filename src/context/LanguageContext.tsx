@@ -115,11 +115,18 @@ interface LanguageContextType {
   t: Record<string, string>;
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+const fallbackContext: LanguageContextType = {
+  lang: "ru",
+  setLang: () => undefined,
+  t: translations.ru as Record<string, string>,
+};
+
+const LanguageContext = createContext<LanguageContextType>(fallbackContext);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [lang, setLang] = useState<Lang>("ru");
-  const t = translations[lang];
+  const t = translations[lang] as Record<string, string>;
+
   return (
     <LanguageContext.Provider value={{ lang, setLang, t }}>
       {children}
@@ -127,8 +134,4 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export const useLang = () => {
-  const ctx = useContext(LanguageContext);
-  if (!ctx) throw new Error("useLang must be used within LanguageProvider");
-  return ctx;
-};
+export const useLang = () => useContext(LanguageContext);
