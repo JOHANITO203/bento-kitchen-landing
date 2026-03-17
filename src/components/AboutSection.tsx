@@ -11,7 +11,14 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="col-span-full">
+    <motion.section
+      id="about"
+      className="col-span-full"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.8, ease: [0.2, 0, 0, 1] }}
+    >
       <div className="rounded-3xl bg-card border border-border/50 p-8 md:p-12 overflow-hidden relative">
         {/* Decorative accent */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
