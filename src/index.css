@@ -40,6 +40,13 @@
     --shadow-bento: 0 0 0 1px rgba(255,255,255,.05), 0 2px 4px rgba(0,0,0,.3), 0 12px 24px rgba(0,0,0,.4);
     --shadow-bento-hover: 0 0 0 1px rgba(255,255,255,.08), 0 4px 8px rgba(0,0,0,.4), 0 24px 48px rgba(0,0,0,.5);
 
+    --shadow-glow-primary: 0 0 12px hsla(12, 90%, 50%, 0.4), 0 0 24px hsla(12, 90%, 50%, 0.15);
+    --shadow-glow-primary-hover: 0 0 20px hsla(12, 90%, 50%, 0.55), 0 0 40px hsla(12, 90%, 50%, 0.25);
+    --shadow-glow-accent: 0 0 12px hsla(142, 70%, 45%, 0.4), 0 0 24px hsla(142, 70%, 45%, 0.15);
+    --shadow-glow-accent-hover: 0 0 20px hsla(142, 70%, 45%, 0.55), 0 0 40px hsla(142, 70%, 45%, 0.25);
+    --shadow-elevated: 0 1px 2px rgba(255,255,255,.06), 0 4px 12px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.08);
+    --shadow-elevated-hover: 0 1px 3px rgba(255,255,255,.1), 0 8px 24px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.12);
+
     --sidebar-background: 0 0% 7%;
     --sidebar-foreground: 0 0% 75%;
     --sidebar-primary: 0 0% 95%;
