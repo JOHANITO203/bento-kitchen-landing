@@ -4,6 +4,7 @@ import BentoStats from "@/components/BentoStats";
 import CategoryGrid from "@/components/CategoryGrid";
 import BentoFlashOffer from "@/components/BentoFlashOffer";
 import BentoFilters from "@/components/BentoFilters";
+import AboutSection from "@/components/AboutSection";
 import CartButton from "@/components/CartButton";
 import CartDrawer from "@/components/CartDrawer";
 import LanguageToggle from "@/components/LanguageToggle";
