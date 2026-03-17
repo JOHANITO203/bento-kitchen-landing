@@ -87,6 +87,7 @@ const Index = () => {
         </div>
       </main>
 
+      <Footer />
       <CartDrawer />
     </div>
   );
