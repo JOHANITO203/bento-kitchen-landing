@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Star, Flame, UtensilsCrossed, Sandwich, GlassWater, Cake, Package } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useLang } from "@/context/LanguageContext";
 
 import populairesImg from "@/assets/populaires.png";
@@ -25,35 +26,36 @@ const CategoryItem = ({ labelKey, descKey, image, delay, span = "col-span-full s
   const desc = t[descKey] || descKey;
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, delay, ease: [0.2, 0, 0, 1] }}
-      className={`group relative overflow-hidden rounded-3xl bg-secondary p-6 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-1 ${span} flex flex-col justify-between min-h-[200px] cursor-pointer`}
-    >
-      {/* Hover overlay */}
-      <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-300 rounded-3xl z-[5]" />
+    <Link to={`/category/${labelKey}`}>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, delay, ease: [0.2, 0, 0, 1] }}
+        className={`group relative overflow-hidden rounded-3xl bg-secondary p-6 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-1 ${span} flex flex-col justify-between min-h-[200px] cursor-pointer`}
+      >
+        <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-300 rounded-3xl z-[5]" />
 
-      <div className="relative z-10">
-        <div className="flex items-center gap-2 mb-1">
-          <span className="text-primary">{icon}</span>
-          <h3 className="text-lg font-display font-semibold text-foreground">{label}</h3>
+        <div className="relative z-10">
+          <div className="flex items-center gap-2 mb-1">
+            <span className="text-primary">{icon}</span>
+            <h3 className="text-lg font-display font-semibold text-foreground">{label}</h3>
+          </div>
+          <p className="text-xs text-muted-foreground font-body leading-relaxed max-w-[60%]">{desc}</p>
         </div>
-        <p className="text-xs text-muted-foreground font-body leading-relaxed max-w-[60%]">{desc}</p>
-      </div>
 
-      <div className="relative z-10 mt-4 flex items-center gap-2">
-        <span className="text-sm font-medium text-primary font-body">{t.discover}</span>
-        <ArrowRight className="w-4 h-4 text-primary transition-transform duration-300 bento-ease group-hover:translate-x-1" strokeWidth={1.5} />
-      </div>
+        <div className="relative z-10 mt-4 flex items-center gap-2">
+          <span className="text-sm font-medium text-primary font-body">{t.discover}</span>
+          <ArrowRight className="w-4 h-4 text-primary transition-transform duration-300 bento-ease group-hover:translate-x-1" strokeWidth={1.5} />
+        </div>
 
-      <img
-        src={image}
-        alt={label}
-        className="absolute -right-2 -bottom-2 w-32 h-32 object-contain drop-shadow-2xl transition-transform duration-500 bento-ease group-hover:scale-110 group-hover:-translate-y-1"
-      />
-    </motion.div>
+        <img
+          src={image}
+          alt={label}
+          className="absolute -right-2 -bottom-2 w-32 h-32 object-contain drop-shadow-2xl transition-transform duration-500 bento-ease group-hover:scale-110 group-hover:-translate-y-1"
+        />
+      </motion.div>
+    </Link>
   );
 };
 

@@ -34,7 +34,7 @@ const Index = () => {
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-6">
             <Link to="/menu" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">{t.menu}</Link>
-            <a href="#categories" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">{t.categories}</a>
+            <Link to="/categories" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">{t.categories}</Link>
             <a href="#offers" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">{t.offers}</a>
           </nav>
 
@@ -60,7 +60,7 @@ const Index = () => {
           <div className="md:hidden border-t border-border/50 bg-background/95 backdrop-blur-xl">
             <nav className="container flex flex-col gap-1 py-3">
               <Link to="/menu" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body py-2">{t.menu}</Link>
-              <a href="#categories" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body py-2">{t.categories}</a>
+              <Link to="/categories" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body py-2">{t.categories}</Link>
               <a href="#offers" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body py-2">{t.offers}</a>
               <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body py-2 flex items-center gap-2">
                 <User className="w-4 h-4" strokeWidth={1.5} />
