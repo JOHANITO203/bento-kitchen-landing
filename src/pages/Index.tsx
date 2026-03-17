@@ -1,51 +1,82 @@
 import BentoHero from "@/components/BentoHero";
 import BentoLiveTracker from "@/components/BentoLiveTracker";
 import BentoStats from "@/components/BentoStats";
-import BentoCategory from "@/components/BentoCategory";
+import CategoryGrid from "@/components/CategoryGrid";
 import BentoFlashOffer from "@/components/BentoFlashOffer";
 import BentoFilters from "@/components/BentoFilters";
 import CartButton from "@/components/CartButton";
 import CartDrawer from "@/components/CartDrawer";
 import LanguageToggle from "@/components/LanguageToggle";
 import { useLang } from "@/context/LanguageContext";
-import jollofImg from "@/assets/jollof.png";
-import tagineImg from "@/assets/tagine.png";
-import mafeImg from "@/assets/mafe.png";
+import { User, Menu } from "lucide-react";
+import { useState } from "react";
 
 const Index = () => {
   const { t } = useLang();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
-        <div className="container flex items-center justify-between py-4">
-          <h2 className="text-xl font-display font-semibold text-foreground">
+        <div className="container flex items-center justify-between py-3">
+          {/* Logo */}
+          <h2 className="text-xl font-display font-semibold text-foreground shrink-0">
             солнце<span className="text-primary"> Африки</span>
           </h2>
-          <nav className="hidden md:flex items-center gap-8">
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">{t.restaurants}</a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">{t.categories}</a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">{t.offers}</a>
+
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-6">
+            <a href="#menu" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">{t.menu}</a>
+            <a href="#categories" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">{t.categories}</a>
+            <a href="#offers" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">{t.offers}</a>
           </nav>
-          <div className="flex items-center gap-3">
+
+          {/* Right actions */}
+          <div className="flex items-center gap-2">
             <LanguageToggle />
+            <button className="hidden sm:flex items-center gap-2 rounded-xl bg-secondary px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <User className="w-4 h-4" strokeWidth={1.5} />
+              <span className="font-body">{t.account}</span>
+            </button>
             <CartButton />
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-secondary text-foreground"
+            >
+              <Menu className="w-5 h-5" strokeWidth={1.5} />
+            </button>
           </div>
         </div>
+
+        {/* Mobile menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden border-t border-border/50 bg-background/95 backdrop-blur-xl">
+            <nav className="container flex flex-col gap-1 py-3">
+              <a href="#menu" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body py-2">{t.menu}</a>
+              <a href="#categories" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body py-2">{t.categories}</a>
+              <a href="#offers" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body py-2">{t.offers}</a>
+              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body py-2 flex items-center gap-2">
+                <User className="w-4 h-4" strokeWidth={1.5} />
+                {t.account}
+              </a>
+            </nav>
+          </div>
+        )}
       </header>
 
       {/* Bento Grid */}
       <main className="container py-6 md:py-10">
         <div className="grid grid-cols-4 sm:grid-cols-8 lg:grid-cols-12 gap-4 md:gap-5">
+          {/* Hero + Tracker + Stats */}
           <BentoHero />
           <BentoLiveTracker />
           <BentoStats />
 
-          <BentoCategory labelKey="popular" titleKey="jollofRice" image={jollofImg} delay={0.2} />
-          <BentoCategory labelKey="trending" titleKey="tagine" image={tagineImg} delay={0.25} />
-          <BentoCategory labelKey="healthy" titleKey="pokeBowl" image={mafeImg} delay={0.3} />
+          {/* Category Navigation */}
+          <CategoryGrid />
 
+          {/* Flash Offer + Filters */}
           <BentoFlashOffer />
           <BentoFilters />
         </div>
