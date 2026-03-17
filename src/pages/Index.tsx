@@ -4,6 +4,8 @@ import BentoStats from "@/components/BentoStats";
 import BentoCategory from "@/components/BentoCategory";
 import BentoFlashOffer from "@/components/BentoFlashOffer";
 import BentoFilters from "@/components/BentoFilters";
+import CartButton from "@/components/CartButton";
+import CartDrawer from "@/components/CartDrawer";
 import sushiImg from "@/assets/sushi.png";
 import burgerImg from "@/assets/burger.png";
 import pokeImg from "@/assets/poke.png";
@@ -15,16 +17,14 @@ const Index = () => {
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
         <div className="container flex items-center justify-between py-4">
           <h2 className="text-xl font-display font-semibold text-foreground">
-            vite<span className="text-primary">.</span>
+            солнце<span className="text-primary"> Африки</span>
           </h2>
           <nav className="hidden md:flex items-center gap-8">
             <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">Restaurants</a>
             <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">Catégories</a>
             <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">Offres</a>
           </nav>
-          <button className="rounded-xl bg-foreground px-4 py-2 text-sm font-semibold text-background transition-all duration-300 bento-ease hover:scale-[1.02] active:scale-[0.98]">
-            Connexion
-          </button>
+          <CartButton />
         </div>
       </header>
 
@@ -46,6 +46,8 @@ const Index = () => {
           <BentoFilters />
         </div>
       </main>
+
+      <CartDrawer />
     </div>
   );
 };

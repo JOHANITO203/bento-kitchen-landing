@@ -1,15 +1,18 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Plus } from "lucide-react";
+import { useCart } from "@/context/CartContext";
 import pastaImg from "@/assets/pasta.png";
 import pokeImg from "@/assets/poke.png";
 
 const dishes = [
-  { name: "Pasta Truffe Noire", price: "18,90", image: pastaImg },
-  { name: "Poke Saumon Premium", price: "16,50", image: pokeImg },
-  { name: "Pasta Truffe Noire", price: "18,90", image: pastaImg },
+  { id: "pasta-truffe", name: "Pasta Truffe Noire", price: 18.9, image: pastaImg },
+  { id: "poke-saumon", name: "Poke Saumon Premium", price: 16.5, image: pokeImg },
+  { id: "pasta-truffe-2", name: "Pasta Carbonara", price: 15.9, image: pastaImg },
 ];
 
 const BentoFlashOffer = () => {
+  const { addItem } = useCart();
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -33,16 +36,24 @@ const BentoFlashOffer = () => {
       </div>
 
       <div className="flex gap-4 overflow-x-auto pb-2 -mb-2 scrollbar-none">
-        {dishes.map((dish, i) => (
+        {dishes.map((dish) => (
           <div
-            key={i}
+            key={dish.id}
             className="shrink-0 w-48 rounded-xl bg-background p-3 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover cursor-pointer"
           >
             <div className="aspect-square rounded-lg overflow-hidden bg-secondary mb-3 flex items-center justify-center">
               <img src={dish.image} alt={dish.name} className="w-full h-full object-contain" />
             </div>
             <p className="text-sm font-medium text-foreground font-body truncate">{dish.name}</p>
-            <p className="text-sm font-semibold text-primary tabular-nums mt-1">{dish.price} €</p>
+            <div className="flex items-center justify-between mt-1.5">
+              <p className="text-sm font-semibold text-primary tabular-nums">{dish.price.toFixed(2).replace(".", ",")} €</p>
+              <button
+                onClick={() => addItem({ id: dish.id, name: dish.name, price: dish.price, image: dish.image })}
+                className="w-7 h-7 rounded-lg bg-primary flex items-center justify-center text-primary-foreground transition-all duration-200 hover:scale-105 active:scale-95"
+              >
+                <Plus className="w-4 h-4" strokeWidth={2} />
+              </button>
+            </div>
           </div>
         ))}
       </div>
