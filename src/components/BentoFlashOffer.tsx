@@ -18,9 +18,10 @@ const BentoFlashOffer = () => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.3, ease: [0.2, 0, 0, 1] }}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.7, delay: 0.1, ease: [0.2, 0, 0, 1] }}
       className="group relative overflow-hidden rounded-3xl bg-secondary p-6 md:p-8 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-0.5 col-span-full lg:col-span-8 min-h-[260px]"
     >
       <div className="flex items-start justify-between mb-6">

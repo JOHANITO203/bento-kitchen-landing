@@ -26,9 +26,10 @@ const CategoryItem = ({ labelKey, descKey, image, delay, span = "col-span-full s
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay, ease: [0.2, 0, 0, 1] }}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, delay, ease: [0.2, 0, 0, 1] }}
       className={`group relative overflow-hidden rounded-3xl bg-secondary p-6 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-1 ${span} flex flex-col justify-between min-h-[200px] cursor-pointer`}
     >
       {/* Hover overlay */}

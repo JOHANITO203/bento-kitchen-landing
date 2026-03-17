@@ -2,17 +2,22 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { useState } from "react";
 import { useLang } from "@/context/LanguageContext";
+import filterVegetarian from "@/assets/filter-vegetarian.png";
+import filterFast from "@/assets/filter-fast.png";
+import filterStarred from "@/assets/filter-starred.png";
+import filterHealthy from "@/assets/filter-healthy.png";
+import filterNew from "@/assets/filter-new.png";
 
 const BentoFilters = () => {
   const { t } = useLang();
   const [selected, setSelected] = useState<string[]>([]);
 
   const filters = [
-    { label: t.vegetarian, emoji: "🌿" },
-    { label: t.fast, emoji: "⚡" },
-    { label: t.starred, emoji: "⭐" },
-    { label: t.healthyFilter, emoji: "🥗" },
-    { label: t.newFilter, emoji: "✨" },
+    { label: t.vegetarian, icon: filterVegetarian },
+    { label: t.fast, icon: filterFast },
+    { label: t.starred, icon: filterStarred },
+    { label: t.healthyFilter, icon: filterHealthy },
+    { label: t.newFilter, icon: filterNew },
   ];
 
   const toggle = (label: string) => {
@@ -23,9 +28,10 @@ const BentoFilters = () => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.4, ease: [0.2, 0, 0, 1] }}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.7, delay: 0.15, ease: [0.2, 0, 0, 1] }}
       className="rounded-3xl bg-secondary p-6 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-0.5 col-span-full sm:col-span-6 lg:col-span-4 min-h-[260px]"
     >
       <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
@@ -48,7 +54,7 @@ const BentoFilters = () => {
                   : "bg-background text-foreground hover:bg-background/80"
               }`}
             >
-              <span>{f.emoji}</span>
+              <img src={f.icon} alt="" className="w-6 h-6 object-contain" />
               <span className="flex-1 text-left font-body">{f.label}</span>
               {active && <Check className="w-4 h-4" strokeWidth={1.5} />}
             </button>
