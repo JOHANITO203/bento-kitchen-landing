@@ -59,7 +59,7 @@ const AppHeader = ({ backTo, backNav, actions, hideCart }: AppHeaderProps) => {
 
           <Link to="/" className="flex items-center gap-1.5 sm:gap-2 min-w-0 shrink-0">
             <img src={logoImg} alt="Солнце Африки" className="w-7 h-7 sm:w-8 sm:h-8 object-contain" />
-            <h2 className="text-sm sm:text-lg md:text-xl font-graffiti text-foreground whitespace-nowrap truncate max-w-[120px] sm:max-w-none">
+            <h2 className="text-[11px] sm:text-lg md:text-xl font-graffiti text-foreground whitespace-nowrap truncate max-w-[100px] sm:max-w-none">
               солнце<span className="text-primary"> Африки</span>
             </h2>
           </Link>
