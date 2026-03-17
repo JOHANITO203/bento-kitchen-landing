@@ -32,7 +32,7 @@ const CategoryItem = ({ labelKey, descKey, image, delay, span = "col-span-full s
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6, delay, ease: [0.2, 0, 0, 1] }}
-        className={`group relative overflow-hidden rounded-3xl bg-secondary p-6 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-1 ${span} flex flex-col justify-between min-h-[200px] cursor-pointer`}
+        className={`group relative overflow-hidden rounded-3xl bg-secondary p-8 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-1 ${span} flex flex-col justify-between min-h-[260px] cursor-pointer`}
       >
         <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-300 rounded-3xl z-[5]" />
 
