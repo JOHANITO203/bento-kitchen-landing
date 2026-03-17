@@ -1,34 +1,45 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Star, Flame, UtensilsCrossed, Sandwich, GlassWater, Cake, Package } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
 
 import populairesImg from "@/assets/populaires.png";
 import grilladesImg from "@/assets/grillades.png";
-import jollofImg from "@/assets/jollof.png";
+import traditionnelsImg from "@/assets/plats_traditionnels.png";
 import streetfoodImg from "@/assets/streetfood.png";
-import dessertsImg from "@/assets/desserts.png";
 import boissonsImg from "@/assets/boissons.png";
+import dessertsImg from "@/assets/desserts.png";
+import comboImg from "@/assets/combo.png";
 
 interface CategoryItemProps {
   labelKey: string;
+  descKey: string;
   image: string;
   delay: number;
   span?: string;
+  icon: React.ReactNode;
 }
 
-const CategoryItem = ({ labelKey, image, delay, span = "col-span-full sm:col-span-4" }: CategoryItemProps) => {
+const CategoryItem = ({ labelKey, descKey, image, delay, span = "col-span-full sm:col-span-4", icon }: CategoryItemProps) => {
   const { t } = useLang();
   const label = t[labelKey] || labelKey;
+  const desc = t[descKey] || descKey;
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay, ease: [0.2, 0, 0, 1] }}
-      className={`group relative overflow-visible rounded-3xl bg-secondary p-6 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-1 ${span} flex flex-col justify-between min-h-[200px] cursor-pointer`}
+      className={`group relative overflow-hidden rounded-3xl bg-secondary p-6 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-1 ${span} flex flex-col justify-between min-h-[200px] cursor-pointer`}
     >
+      {/* Hover overlay */}
+      <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-300 rounded-3xl z-[5]" />
+
       <div className="relative z-10">
-        <h3 className="text-lg font-display font-semibold text-foreground">{label}</h3>
+        <div className="flex items-center gap-2 mb-1">
+          <span className="text-primary">{icon}</span>
+          <h3 className="text-lg font-display font-semibold text-foreground">{label}</h3>
+        </div>
+        <p className="text-xs text-muted-foreground font-body leading-relaxed max-w-[60%]">{desc}</p>
       </div>
 
       <div className="relative z-10 mt-4 flex items-center gap-2">
@@ -39,19 +50,20 @@ const CategoryItem = ({ labelKey, image, delay, span = "col-span-full sm:col-spa
       <img
         src={image}
         alt={label}
-        className="absolute -right-2 -bottom-2 w-32 h-32 object-contain drop-shadow-2xl transition-transform duration-500 bento-ease group-hover:scale-105 group-hover:-translate-y-1"
+        className="absolute -right-2 -bottom-2 w-32 h-32 object-contain drop-shadow-2xl transition-transform duration-500 bento-ease group-hover:scale-110 group-hover:-translate-y-1"
       />
     </motion.div>
   );
 };
 
 const categories = [
-  { labelKey: "popular", image: populairesImg, span: "col-span-full sm:col-span-4" },
-  { labelKey: "grillades", image: grilladesImg, span: "col-span-full sm:col-span-4" },
-  { labelKey: "africanDishes", image: jollofImg, span: "col-span-full sm:col-span-4" },
-  { labelKey: "streetFood", image: streetfoodImg, span: "col-span-full sm:col-span-4" },
-  { labelKey: "desserts", image: dessertsImg, span: "col-span-full sm:col-span-4" },
-  { labelKey: "drinks", image: boissonsImg, span: "col-span-full sm:col-span-4" },
+  { labelKey: "popular", descKey: "popularDesc", image: populairesImg, span: "col-span-full sm:col-span-4", icon: <Star className="w-4 h-4" strokeWidth={1.5} /> },
+  { labelKey: "grillades", descKey: "grilladesDesc", image: grilladesImg, span: "col-span-full sm:col-span-4", icon: <Flame className="w-4 h-4" strokeWidth={1.5} /> },
+  { labelKey: "traditionalDishes", descKey: "traditionalDesc", image: traditionnelsImg, span: "col-span-full sm:col-span-4", icon: <UtensilsCrossed className="w-4 h-4" strokeWidth={1.5} /> },
+  { labelKey: "streetFood", descKey: "streetFoodDesc", image: streetfoodImg, span: "col-span-full sm:col-span-4", icon: <Sandwich className="w-4 h-4" strokeWidth={1.5} /> },
+  { labelKey: "drinks", descKey: "drinksDesc", image: boissonsImg, span: "col-span-full sm:col-span-4", icon: <GlassWater className="w-4 h-4" strokeWidth={1.5} /> },
+  { labelKey: "desserts", descKey: "dessertsDesc", image: dessertsImg, span: "col-span-full sm:col-span-4", icon: <Cake className="w-4 h-4" strokeWidth={1.5} /> },
+  { labelKey: "combo", descKey: "comboDesc", image: comboImg, span: "col-span-full sm:col-span-4", icon: <Package className="w-4 h-4" strokeWidth={1.5} /> },
 ];
 
 const CategoryGrid = () => {

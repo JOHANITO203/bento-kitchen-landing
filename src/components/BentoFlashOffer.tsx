@@ -2,18 +2,18 @@ import { motion } from "framer-motion";
 import { ArrowRight, Plus } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { useLang } from "@/context/LanguageContext";
-import tagineImg from "@/assets/tagine.png";
 import jollofImg from "@/assets/jollof.png";
 import mafeImg from "@/assets/mafe.png";
+import thiebImg from "@/assets/thieboudienne.png";
 
 const BentoFlashOffer = () => {
   const { addItem } = useCart();
   const { t } = useLang();
 
   const dishes = [
-    { id: "tagine-premium", name: t.taginePremiun, price: 1490, image: tagineImg },
     { id: "jollof-special", name: t.jollofSpecial, price: 1250, image: jollofImg },
     { id: "mafe-classic", name: t.mafeClassic, price: 1150, image: mafeImg },
+    { id: "thieb-royal", name: t.thiebRoyal, price: 1390, image: thiebImg },
   ];
 
   return (
