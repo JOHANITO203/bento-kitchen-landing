@@ -1,6 +1,6 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Star, Flame, UtensilsCrossed, Sandwich, GlassWater, Cake, Package, SlidersHorizontal, X } from "lucide-react";
+import { Star, Flame, UtensilsCrossed, Sandwich, GlassWater, Cake, Package, SlidersHorizontal, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
 import { dishes, categoryKeys, type CategoryKey, type Badge } from "@/data/menuData";
 import DishCard from "@/components/DishCard";
@@ -36,6 +36,137 @@ const filterOptions: FilterOption[] = [
   { key: "popular", icon: filterFast, labelKey: "fast" },
   { key: "new", icon: filterNew, labelKey: "newFilter" },
 ];
+
+interface CategoryTabsProps {
+  activeCategory: CategoryKey | "all";
+  setActiveCategory: (cat: CategoryKey | "all") => void;
+  categoryIcons: Record<CategoryKey, React.ReactNode>;
+  filterButton: React.ReactNode;
+  t: Record<string, string>;
+}
+
+const CategoryTabs = ({ activeCategory, setActiveCategory, categoryIcons, filterButton, t }: CategoryTabsProps) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
+
+  const checkScroll = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 4);
+    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 4);
+  }, []);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    checkScroll();
+    el.addEventListener("scroll", checkScroll, { passive: true });
+    window.addEventListener("resize", checkScroll);
+    return () => {
+      el.removeEventListener("scroll", checkScroll);
+      window.removeEventListener("resize", checkScroll);
+    };
+  }, [checkScroll]);
+
+  // Auto-scroll active tab into view
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const activeBtn = el.querySelector("[data-active='true']") as HTMLElement;
+    if (activeBtn) {
+      const left = activeBtn.offsetLeft - el.offsetLeft - 40;
+      el.scrollTo({ left: Math.max(0, left), behavior: "smooth" });
+    }
+  }, [activeCategory]);
+
+  const scroll = (dir: "left" | "right") => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.scrollBy({ left: dir === "left" ? -200 : 200, behavior: "smooth" });
+  };
+
+  const allTabs: { key: CategoryKey | "all"; icon?: React.ReactNode; label: string }[] = [
+    { key: "all", label: t.allDishes },
+    ...categoryKeys.map((key) => ({ key, icon: categoryIcons[key], label: t[key] || key })),
+  ];
+
+  return (
+    <div className="relative mb-6 group/tabs">
+      {/* Scroll fade edges */}
+      {canScrollLeft && (
+        <div className="absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-background/80 to-transparent z-10 pointer-events-none rounded-l-2xl" />
+      )}
+      {canScrollRight && (
+        <div className="absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-background/80 to-transparent z-10 pointer-events-none rounded-r-2xl" />
+      )}
+
+      {/* Scroll arrows (desktop) */}
+      <AnimatePresence>
+        {canScrollLeft && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            onClick={() => scroll("left")}
+            className="hidden md:flex absolute -left-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-secondary shadow-elevated items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+          >
+            <ChevronLeft className="w-4 h-4" strokeWidth={2} />
+          </motion.button>
+        )}
+        {canScrollRight && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            onClick={() => scroll("right")}
+            className="hidden md:flex absolute -right-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-secondary shadow-elevated items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+          >
+            <ChevronRight className="w-4 h-4" strokeWidth={2} />
+          </motion.button>
+        )}
+      </AnimatePresence>
+
+      <div
+        ref={scrollRef}
+        className="flex gap-1.5 sm:gap-2 overflow-x-auto pb-2 scrollbar-hide items-center snap-x snap-mandatory scroll-smooth px-1"
+      >
+        {/* Mobile filter button */}
+        <div className="md:hidden shrink-0 snap-start">{filterButton}</div>
+
+        {allTabs.map((tab) => {
+          const isActive = activeCategory === tab.key;
+          return (
+            <button
+              key={tab.key}
+              data-active={isActive}
+              onClick={() => setActiveCategory(tab.key)}
+              className="relative shrink-0 flex items-center gap-1.5 sm:gap-2 rounded-2xl px-3.5 sm:px-4 py-2 sm:py-2.5 text-sm font-medium transition-colors duration-200 snap-start"
+            >
+              {isActive && (
+                <motion.div
+                  layoutId="category-pill"
+                  className="absolute inset-0 rounded-2xl bg-primary shadow-glow-primary"
+                  transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                />
+              )}
+              {tab.icon && (
+                <span className={`relative z-10 transition-colors duration-200 ${isActive ? "text-primary-foreground" : "text-muted-foreground"}`}>
+                  {tab.icon}
+                </span>
+              )}
+              <span className={`relative z-10 font-body whitespace-nowrap transition-colors duration-200 ${
+                isActive ? "text-primary-foreground font-semibold" : "text-muted-foreground hover:text-foreground"
+              }`}>
+                {tab.label}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
 
 const MenuPage = () => {
   const { t } = useLang();
@@ -151,34 +282,13 @@ const MenuPage = () => {
         </AnimatePresence>
 
         {/* Category tabs */}
-        <div className="flex gap-2 overflow-x-auto pb-4 mb-6 scrollbar-hide items-center">
-          {/* Mobile filter button */}
-          <div className="md:hidden shrink-0">{filterButton}</div>
-          <button
-            onClick={() => setActiveCategory("all")}
-            className={`shrink-0 flex items-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-medium transition-all duration-300 bento-ease ${
-              activeCategory === "all"
-                ? "bg-primary text-primary-foreground shadow-bento"
-                : "bg-secondary text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            <span className="font-body">{t.allDishes}</span>
-          </button>
-          {categoryKeys.map((key) => (
-            <button
-              key={key}
-              onClick={() => setActiveCategory(key)}
-              className={`shrink-0 flex items-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-medium transition-all duration-300 bento-ease ${
-                activeCategory === key
-                  ? "bg-primary text-primary-foreground shadow-bento"
-                  : "bg-secondary text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              <span className="text-current">{categoryIcons[key]}</span>
-              <span className="font-body">{t[key]}</span>
-            </button>
-          ))}
-        </div>
+        <CategoryTabs
+          activeCategory={activeCategory}
+          setActiveCategory={setActiveCategory}
+          categoryIcons={categoryIcons}
+          filterButton={filterButton}
+          t={t}
+        />
 
         {/* Dishes grid */}
         {activeCategory === "all" && groupedDishes ? (
