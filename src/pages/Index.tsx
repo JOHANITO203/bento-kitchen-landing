@@ -1,5 +1,5 @@
 import woodBg from "@/assets/wood-bg.jpg";
-import cutleryIcon from "@/assets/icon-cutlery-graffiti.png";
+import logoImg from "/favicon.png";
 import BentoHero from "@/components/BentoHero";
 import BentoLiveTracker from "@/components/BentoLiveTracker";
 import BentoStats from "@/components/BentoStats";
@@ -27,7 +27,7 @@ const Index = () => {
         <div className="container flex items-center justify-between py-3">
           {/* Logo */}
           <h2 className="text-xl font-graffiti text-foreground shrink-0 flex items-center gap-2">
-            <img src={cutleryIcon} alt="" className="w-7 h-7 object-contain invert" />
+            <img src={logoImg} alt="Солнце Африки" className="w-8 h-8 object-contain" />
             солнце<span className="text-primary"> Африки</span>
           </h2>
 
