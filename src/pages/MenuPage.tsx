@@ -1,6 +1,6 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Star, Flame, UtensilsCrossed, Sandwich, GlassWater, Cake, Package, SlidersHorizontal, X } from "lucide-react";
+import { Star, Flame, UtensilsCrossed, Sandwich, GlassWater, Cake, Package, SlidersHorizontal, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
 import { dishes, categoryKeys, type CategoryKey, type Badge } from "@/data/menuData";
 import DishCard from "@/components/DishCard";
