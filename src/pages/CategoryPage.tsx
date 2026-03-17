@@ -2,16 +2,11 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { useMemo } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import woodBg from "@/assets/wood-bg.jpg";
-const cutleryIcon = "/favicon.png";
 import { useLang } from "@/context/LanguageContext";
 import { categoriesConfig } from "@/data/categoriesConfig";
 import { dishes, type CategoryKey } from "@/data/menuData";
 import DishCard from "@/components/DishCard";
-import CartButton from "@/components/CartButton";
-import CartDrawer from "@/components/CartDrawer";
-import LanguageToggle from "@/components/LanguageToggle";
-import Footer from "@/components/Footer";
+import PageLayout from "@/components/PageLayout";
 
 const CategoryPage = () => {
   const { id } = useParams<{ id: string }>();
