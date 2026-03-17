@@ -188,6 +188,12 @@ const translations = {
     addToCart: "Add",
     clearFilters: "Clear",
     noResults: "Nothing found. Try different filters.",
+    // Categories page
+    categoriesPageTitle: "Categories",
+    categoriesPageSubtitle: "Explore all the flavors of Africa — choose your category.",
+    dishesCount: "dishes",
+    prevCategory: "Previous",
+    nextCategory: "Next",
   },
 } as const;
 
