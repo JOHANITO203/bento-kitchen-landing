@@ -91,7 +91,7 @@ const MenuPage = () => {
   );
 
   return (
-    <PageLayout backTo="/" headerActions={filterButton}>
+    <PageLayout backTo="/" headerActions={<span className="hidden md:flex">{filterButton}</span>}>
         {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -151,7 +151,9 @@ const MenuPage = () => {
         </AnimatePresence>
 
         {/* Category tabs */}
-        <div className="flex gap-2 overflow-x-auto pb-4 mb-6 scrollbar-hide">
+        <div className="flex gap-2 overflow-x-auto pb-4 mb-6 scrollbar-hide items-center">
+          {/* Mobile filter button */}
+          <div className="md:hidden shrink-0">{filterButton}</div>
           <button
             onClick={() => setActiveCategory("all")}
             className={`shrink-0 flex items-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-medium transition-all duration-300 bento-ease ${
