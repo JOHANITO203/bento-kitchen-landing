@@ -14,6 +14,7 @@ import LanguageToggle from "@/components/LanguageToggle";
 import { useLang } from "@/context/LanguageContext";
 import { User, Menu } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const { t } = useLang();
