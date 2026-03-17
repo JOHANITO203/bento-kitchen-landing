@@ -200,6 +200,12 @@ const translations = {
     dishesCount: "dishes",
     prevCategory: "Previous",
     nextCategory: "Next",
+    // Offers page
+    offersPageTitle: "Deals & Discounts",
+    offersPageSubtitle: "Best offers — don't miss your chance!",
+    promoOfTheDay: "Deal of the Day",
+    endsIn: "Ends in",
+    moreDeals: "More deals",
   },
 } as const;
 
