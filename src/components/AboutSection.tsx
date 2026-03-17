@@ -21,7 +21,7 @@ const AboutSection = () => {
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.8, ease: [0.2, 0, 0, 1] }}
     >
-      <div className="rounded-3xl bg-card border border-border/50 p-8 md:p-12 overflow-hidden relative">
+      <div className="rounded-3xl bg-card border border-border/50 p-5 sm:p-8 md:p-12 overflow-hidden relative">
         {/* Graffiti texture */}
         <img
           src={graffitiSplash2}
