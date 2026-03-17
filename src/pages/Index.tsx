@@ -80,6 +80,9 @@ const Index = () => {
           {/* Flash Offer + Filters */}
           <BentoFlashOffer />
           <BentoFilters />
+
+          {/* About Us */}
+          <AboutSection />
         </div>
       </main>
 
