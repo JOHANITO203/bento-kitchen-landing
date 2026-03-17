@@ -354,11 +354,7 @@ const CartPage = () => {
             </motion.div>
           </>
         )}
-      </main>
-
-      <Footer />
-      <CartDrawer />
-    </div>
+    </PageLayout>
   );
 };
 
