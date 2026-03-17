@@ -19,7 +19,7 @@ const BentoHero = () => {
       <img
         src={graffitiSplash}
         alt=""
-        className="absolute -top-10 -right-10 w-72 h-72 object-contain opacity-20 pointer-events-none rotate-12"
+        className="absolute -top-10 -right-10 w-80 h-80 object-contain opacity-25 pointer-events-none rotate-12"
       />
 
       <div className="relative z-10">
