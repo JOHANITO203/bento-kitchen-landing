@@ -2,16 +2,11 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { useMemo } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import woodBg from "@/assets/wood-bg.jpg";
-const cutleryIcon = "/favicon.png";
 import { useLang } from "@/context/LanguageContext";
 import { categoriesConfig } from "@/data/categoriesConfig";
 import { dishes, type CategoryKey } from "@/data/menuData";
 import DishCard from "@/components/DishCard";
-import CartButton from "@/components/CartButton";
-import CartDrawer from "@/components/CartDrawer";
-import LanguageToggle from "@/components/LanguageToggle";
-import Footer from "@/components/Footer";
+import PageLayout from "@/components/PageLayout";
 
 const CategoryPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -31,26 +26,7 @@ const CategoryPage = () => {
   const nextCat = currentIndex < categoriesConfig.length - 1 ? categoriesConfig[currentIndex + 1] : null;
 
   return (
-    <div className="min-h-screen bg-background" style={{ backgroundImage: `url(${woodBg})`, backgroundSize: 'cover', backgroundAttachment: 'fixed', backgroundPosition: 'center' }}>
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
-        <div className="container flex items-center justify-between py-3">
-          <div className="flex items-center gap-3">
-            <Link to="/categories" className="flex items-center justify-center w-10 h-10 rounded-xl bg-secondary text-foreground hover:bg-secondary/80 transition-colors">
-              <ArrowLeft className="w-5 h-5" strokeWidth={1.5} />
-            </Link>
-            <h2 className="text-xl font-graffiti text-foreground flex items-center gap-2">
-              <img src={cutleryIcon} alt="Солнце Африки" className="w-8 h-8 object-contain" />
-              солнце<span className="text-primary"> Африки</span>
-            </h2>
-          </div>
-          <div className="flex items-center gap-2">
-            <LanguageToggle />
-            <CartButton />
-          </div>
-        </div>
-      </header>
-
+    <PageLayout backTo="/categories" mainClassName="">
       {/* Hero banner */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -133,9 +109,7 @@ const CategoryPage = () => {
         </div>
       </main>
 
-      <Footer />
-      <CartDrawer />
-    </div>
+    </PageLayout>
   );
 };
 

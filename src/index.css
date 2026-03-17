@@ -141,4 +141,8 @@
     background-size: 100% 6px;
     background-position: 0 88%;
   }
+
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
 }
