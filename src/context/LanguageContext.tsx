@@ -104,6 +104,12 @@ const translations = {
     dishesCount: "блюд",
     prevCategory: "Предыдущая",
     nextCategory: "Следующая",
+    // Offers page
+    offersPageTitle: "Акции и скидки",
+    offersPageSubtitle: "Лучшие предложения — не упустите свой шанс!",
+    promoOfTheDay: "Акция дня",
+    endsIn: "Осталось",
+    moreDeals: "Ещё предложения",
   },
   en: {
     menu: "Menu",
