@@ -1,0 +1,60 @@
+import { motion } from "framer-motion";
+import { Check } from "lucide-react";
+import { useState } from "react";
+
+const filters = [
+  { label: "Végétarien", emoji: "🌿" },
+  { label: "Rapide", emoji: "⚡" },
+  { label: "Étoilé", emoji: "⭐" },
+  { label: "Healthy", emoji: "🥗" },
+  { label: "Nouveau", emoji: "✨" },
+];
+
+const BentoFilters = () => {
+  const [selected, setSelected] = useState<string[]>([]);
+
+  const toggle = (label: string) => {
+    setSelected((prev) =>
+      prev.includes(label) ? prev.filter((l) => l !== label) : [...prev, label]
+    );
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.4, ease: [0.2, 0, 0, 1] }}
+      className="rounded-3xl bg-secondary p-6 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-0.5 col-span-full sm:col-span-6 lg:col-span-4 min-h-[260px]"
+    >
+      <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+        Filtres
+      </span>
+      <h3 className="mt-2 text-xl font-display font-semibold text-foreground mb-5">
+        Vos envies
+      </h3>
+
+      <div className="flex flex-col gap-2">
+        {filters.map((f) => {
+          const active = selected.includes(f.label);
+          return (
+            <button
+              key={f.label}
+              onClick={() => toggle(f.label)}
+              className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all duration-300 bento-ease ${
+                active
+                  ? "bg-foreground text-background shadow-bento"
+                  : "bg-background text-foreground hover:bg-background/80"
+              }`}
+            >
+              <span>{f.emoji}</span>
+              <span className="flex-1 text-left font-body">{f.label}</span>
+              {active && <Check className="w-4 h-4" strokeWidth={1.5} />}
+            </button>
+          );
+        })}
+      </div>
+    </motion.div>
+  );
+};
+
+export default BentoFilters;
