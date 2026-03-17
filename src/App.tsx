@@ -7,6 +7,8 @@ import { CartProvider } from "@/context/CartContext";
 import { LanguageProvider } from "@/context/LanguageContext";
 import Index from "./pages/Index.tsx";
 import MenuPage from "./pages/MenuPage.tsx";
+import CategoriesPage from "./pages/CategoriesPage.tsx";
+import CategoryPage from "./pages/CategoryPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
