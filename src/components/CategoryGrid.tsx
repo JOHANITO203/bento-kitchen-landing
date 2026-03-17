@@ -38,7 +38,7 @@ const CategoryItem = ({ labelKey, descKey, image, delay, icon }: CategoryItemPro
         <div className="relative z-10">
           <div className="flex items-center gap-2 mb-2">
             <span className="text-primary">{icon}</span>
-            <h3 className="text-xl font-display font-semibold text-foreground">{label}</h3>
+            <h3 className="text-base sm:text-xl font-display font-semibold text-foreground">{label}</h3>
           </div>
           <p className="text-sm text-muted-foreground font-body leading-relaxed max-w-[60%]">{desc}</p>
         </div>
