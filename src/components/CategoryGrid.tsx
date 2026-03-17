@@ -39,9 +39,9 @@ const CategoryItem = ({ labelKey, descKey, image, delay, span = "col-span-full s
         <div className="relative z-10">
           <div className="flex items-center gap-2 mb-1">
             <span className="text-primary">{icon}</span>
-            <h3 className="text-lg font-display font-semibold text-foreground">{label}</h3>
+            <h3 className="text-xl font-display font-semibold text-foreground">{label}</h3>
           </div>
-          <p className="text-xs text-muted-foreground font-body leading-relaxed max-w-[60%]">{desc}</p>
+          <p className="text-sm text-muted-foreground font-body leading-relaxed max-w-[55%]">{desc}</p>
         </div>
 
         <div className="relative z-10 mt-4 flex items-center gap-2">
