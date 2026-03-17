@@ -60,13 +60,13 @@ const CategoryItem = ({ labelKey, descKey, image, delay, span = "col-span-full s
 };
 
 const categories = [
-  { labelKey: "popular", descKey: "popularDesc", image: populairesImg, span: "col-span-full sm:col-span-6", icon: <Star className="w-5 h-5" strokeWidth={1.5} /> },
-  { labelKey: "grillades", descKey: "grilladesDesc", image: grilladesImg, span: "col-span-full sm:col-span-6", icon: <Flame className="w-5 h-5" strokeWidth={1.5} /> },
-  { labelKey: "traditionalDishes", descKey: "traditionalDesc", image: traditionnelsImg, span: "col-span-full sm:col-span-6", icon: <UtensilsCrossed className="w-5 h-5" strokeWidth={1.5} /> },
-  { labelKey: "streetFood", descKey: "streetFoodDesc", image: streetfoodImg, span: "col-span-full sm:col-span-6", icon: <Sandwich className="w-5 h-5" strokeWidth={1.5} /> },
-  { labelKey: "drinks", descKey: "drinksDesc", image: boissonsImg, span: "col-span-full sm:col-span-6", icon: <GlassWater className="w-5 h-5" strokeWidth={1.5} /> },
-  { labelKey: "desserts", descKey: "dessertsDesc", image: dessertsImg, span: "col-span-full sm:col-span-6", icon: <Cake className="w-5 h-5" strokeWidth={1.5} /> },
-  { labelKey: "combo", descKey: "comboDesc", image: comboImg, span: "col-span-full sm:col-span-12", icon: <Package className="w-5 h-5" strokeWidth={1.5} /> },
+  { labelKey: "popular", descKey: "popularDesc", image: populairesImg, span: "col-span-full", icon: <Star className="w-5 h-5" strokeWidth={1.5} /> },
+  { labelKey: "grillades", descKey: "grilladesDesc", image: grilladesImg, span: "col-span-full", icon: <Flame className="w-5 h-5" strokeWidth={1.5} /> },
+  { labelKey: "traditionalDishes", descKey: "traditionalDesc", image: traditionnelsImg, span: "col-span-full", icon: <UtensilsCrossed className="w-5 h-5" strokeWidth={1.5} /> },
+  { labelKey: "streetFood", descKey: "streetFoodDesc", image: streetfoodImg, span: "col-span-full", icon: <Sandwich className="w-5 h-5" strokeWidth={1.5} /> },
+  { labelKey: "drinks", descKey: "drinksDesc", image: boissonsImg, span: "col-span-full", icon: <GlassWater className="w-5 h-5" strokeWidth={1.5} /> },
+  { labelKey: "desserts", descKey: "dessertsDesc", image: dessertsImg, span: "col-span-full", icon: <Cake className="w-5 h-5" strokeWidth={1.5} /> },
+  { labelKey: "combo", descKey: "comboDesc", image: comboImg, span: "col-span-full", icon: <Package className="w-5 h-5" strokeWidth={1.5} /> },
 ];
 
 const CategoryGrid = () => {
