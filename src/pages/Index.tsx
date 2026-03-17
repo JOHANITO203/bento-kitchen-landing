@@ -4,6 +4,8 @@ import BentoStats from "@/components/BentoStats";
 import BentoCategory from "@/components/BentoCategory";
 import BentoFlashOffer from "@/components/BentoFlashOffer";
 import BentoFilters from "@/components/BentoFilters";
+import CartButton from "@/components/CartButton";
+import CartDrawer from "@/components/CartDrawer";
 import sushiImg from "@/assets/sushi.png";
 import burgerImg from "@/assets/burger.png";
 import pokeImg from "@/assets/poke.png";
@@ -22,9 +24,7 @@ const Index = () => {
             <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">Catégories</a>
             <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">Offres</a>
           </nav>
-          <button className="rounded-xl bg-foreground px-4 py-2 text-sm font-semibold text-background transition-all duration-300 bento-ease hover:scale-[1.02] active:scale-[0.98]">
-            Connexion
-          </button>
+          <CartButton />
         </div>
       </header>
 
@@ -46,6 +46,8 @@ const Index = () => {
           <BentoFilters />
         </div>
       </main>
+
+      <CartDrawer />
     </div>
   );
 };
