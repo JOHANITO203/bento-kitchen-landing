@@ -1,5 +1,6 @@
 import { useLang } from "@/context/LanguageContext";
 import { MapPin, Phone, Mail, Clock, ExternalLink } from "lucide-react";
+import { motion } from "framer-motion";
 
 const VKIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
@@ -29,7 +30,13 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-foreground text-background mt-10">
+    <motion.footer
+      className="bg-foreground text-background mt-10"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.8, ease: [0.2, 0, 0, 1] }}
+    >
       <div className="container py-12 md:py-16">
         {/* Top section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
@@ -156,7 +163,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 
