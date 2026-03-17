@@ -62,10 +62,10 @@ const Index = () => {
               <Link to="/menu" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body py-2">{t.menu}</Link>
               <Link to="/categories" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body py-2">{t.categories}</Link>
               <Link to="/offers" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body py-2">{t.offers}</Link>
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body py-2 flex items-center gap-2">
+              <Link to="/account" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body py-2 flex items-center gap-2">
                 <User className="w-4 h-4" strokeWidth={1.5} />
                 {t.account}
-              </a>
+              </Link>
             </nav>
           </div>
         )}
