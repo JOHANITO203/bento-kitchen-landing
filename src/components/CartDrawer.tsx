@@ -86,8 +86,12 @@ const CartDrawer = () => {
                 {totalPrice} {t.currency}
               </span>
             </div>
-            <button className="w-full rounded-xl bg-primary px-5 py-3.5 text-sm font-semibold text-primary-foreground transition-all duration-300 bento-ease hover:scale-[1.01] active:scale-[0.99]">
-              {t.order} — {totalPrice} {t.currency}
+            <button
+              onClick={() => { setIsOpen(false); navigate("/cart"); }}
+              className="w-full rounded-xl bg-primary px-5 py-3.5 text-sm font-semibold text-primary-foreground transition-all duration-300 bento-ease hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2"
+            >
+              {t.goToCart || t.order} — {totalPrice} {t.currency}
+              <ArrowRight className="w-4 h-4" strokeWidth={2} />
             </button>
           </div>
         )}
