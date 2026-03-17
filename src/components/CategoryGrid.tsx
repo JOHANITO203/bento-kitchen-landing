@@ -31,7 +31,7 @@ const CategoryItem = ({ labelKey, descKey, image, delay, icon }: CategoryItemPro
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6, delay, ease: [0.2, 0, 0, 1] }}
-        className="group relative overflow-hidden rounded-3xl bg-secondary p-5 sm:p-8 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-1 flex flex-col justify-between min-h-[180px] sm:min-h-[220px] cursor-pointer w-full"
+        className="group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-secondary p-4 sm:p-8 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-1 flex flex-col justify-between min-h-[150px] sm:min-h-[220px] cursor-pointer w-full"
       >
         <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-300 rounded-3xl z-[5]" />
 
@@ -51,7 +51,7 @@ const CategoryItem = ({ labelKey, descKey, image, delay, icon }: CategoryItemPro
         <img
           src={image}
           alt={label}
-          className="absolute right-2 sm:right-4 bottom-2 w-28 sm:w-36 h-28 sm:h-36 object-contain drop-shadow-2xl transition-transform duration-500 bento-ease group-hover:scale-110 group-hover:-translate-y-1"
+          className="absolute right-1 sm:right-4 bottom-1 sm:bottom-2 w-24 sm:w-36 h-24 sm:h-36 object-contain drop-shadow-2xl transition-transform duration-500 bento-ease group-hover:scale-110 group-hover:-translate-y-1"
         />
       </motion.div>
     </Link>
@@ -74,7 +74,7 @@ const CategoryGrid = () => {
   return (
     <div className="col-span-full flex flex-col gap-4">
       <h2 className="text-xl font-display font-semibold text-foreground mt-2">{t.categories}</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         {categories.map((cat, i) => (
           <CategoryItem key={cat.labelKey} {...cat} delay={0.1 + i * 0.05} />
         ))}

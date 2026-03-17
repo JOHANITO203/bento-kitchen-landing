@@ -22,7 +22,7 @@ const BentoFlashOffer = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.7, delay: 0.1, ease: [0.2, 0, 0, 1] }}
-      className="group relative overflow-hidden rounded-3xl bg-secondary p-4 sm:p-6 md:p-8 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-0.5 col-span-full lg:col-span-8 min-h-[220px] sm:min-h-[260px]"
+      className="group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-secondary p-3 sm:p-6 md:p-8 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-0.5 col-span-full lg:col-span-8 min-h-[200px] sm:min-h-[260px]"
     >
       <div className="flex items-start justify-between mb-6">
         <div>
@@ -43,7 +43,7 @@ const BentoFlashOffer = () => {
         {dishes.map((dish) => (
           <div
             key={dish.id}
-            className="shrink-0 w-40 sm:w-48 rounded-xl bg-background p-3 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover cursor-pointer"
+            className="shrink-0 w-36 sm:w-48 rounded-xl bg-background p-2.5 sm:p-3 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover cursor-pointer"
           >
             <div className="aspect-square rounded-lg overflow-hidden bg-secondary mb-3 flex items-center justify-center">
               <img src={dish.image} alt={dish.name} className="w-full h-full object-contain" />

@@ -26,12 +26,12 @@ const PageLayout = ({
   backNav,
   headerActions,
   hideCart,
-  mainClassName = "container px-3 sm:px-4 py-4 sm:py-6 md:py-10",
+  mainClassName = "container py-4 sm:py-6 md:py-10",
   hideFooter,
 }: PageLayoutProps) => {
   return (
     <div
-      className="min-h-screen bg-background pb-16 md:pb-0"
+      className="min-h-screen bg-background pb-16 md:pb-0 overflow-x-hidden w-full"
       style={{
         backgroundImage: `url(${woodBg})`,
         backgroundSize: "cover",
