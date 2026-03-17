@@ -1,16 +1,16 @@
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, Star, Flame, UtensilsCrossed, Sandwich, GlassWater, Cake, Package, SlidersHorizontal, X } from "lucide-react";
-import { Link } from "react-router-dom";
-import woodBg from "@/assets/wood-bg.jpg";
-const cutleryIcon = "/favicon.png";
+import { Star, Flame, UtensilsCrossed, Sandwich, GlassWater, Cake, Package, SlidersHorizontal, X } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
 import { dishes, categoryKeys, type CategoryKey, type Badge } from "@/data/menuData";
 import DishCard from "@/components/DishCard";
-import CartButton from "@/components/CartButton";
-import CartDrawer from "@/components/CartDrawer";
-import LanguageToggle from "@/components/LanguageToggle";
-import Footer from "@/components/Footer";
+import PageLayout from "@/components/PageLayout";
+
+import filterVegetarian from "@/assets/filter-vegetarian.png";
+import filterFast from "@/assets/filter-fast.png";
+import filterStarred from "@/assets/filter-starred.png";
+import filterHealthy from "@/assets/filter-healthy.png";
+import filterNew from "@/assets/filter-new.png";
 
 import filterVegetarian from "@/assets/filter-vegetarian.png";
 import filterFast from "@/assets/filter-fast.png";
