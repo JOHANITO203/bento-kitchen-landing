@@ -1,4 +1,5 @@
 import woodBg from "@/assets/wood-bg.jpg";
+import cutleryIcon from "@/assets/icon-cutlery-graffiti.png";
 import BentoHero from "@/components/BentoHero";
 import BentoLiveTracker from "@/components/BentoLiveTracker";
 import BentoStats from "@/components/BentoStats";
