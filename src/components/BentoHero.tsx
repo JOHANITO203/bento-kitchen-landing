@@ -35,12 +35,12 @@ const BentoHero = () => {
         </p>
       </div>
 
-      <div className="relative z-10 mt-8 flex items-center gap-3">
-        <button className="flex items-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-sm font-bold text-primary-foreground transition-all duration-300 bento-ease hover:scale-[1.02] active:scale-[0.98] uppercase tracking-wide">
+      <div className="relative z-10 mt-5 sm:mt-8 flex flex-wrap items-center gap-2 sm:gap-3">
+        <button className="flex items-center gap-2 rounded-xl bg-primary px-4 sm:px-6 py-2.5 sm:py-3.5 text-xs sm:text-sm font-bold text-primary-foreground transition-all duration-300 bento-ease hover:scale-[1.02] active:scale-[0.98] uppercase tracking-wide">
           {t.orderNow}
           <ArrowRight className="w-4 h-4" strokeWidth={2} />
         </button>
-        <button className="flex items-center gap-2 rounded-xl bg-background px-6 py-3.5 text-sm font-bold text-foreground shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:scale-[1.02] active:scale-[0.98] uppercase tracking-wide">
+        <button className="flex items-center gap-2 rounded-xl bg-background px-4 sm:px-6 py-2.5 sm:py-3.5 text-xs sm:text-sm font-bold text-foreground shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:scale-[1.02] active:scale-[0.98] uppercase tracking-wide">
           {t.viewMenu}
         </button>
       </div>

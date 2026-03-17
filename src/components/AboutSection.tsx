@@ -36,7 +36,7 @@ const AboutSection = () => {
             <span className="inline-block text-xs font-bold tracking-widest uppercase text-primary mb-3">
               {t.aboutTag}
             </span>
-            <h2 className="text-3xl md:text-4xl font-graffiti text-foreground mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-graffiti text-foreground mb-4">
               {t.aboutTitle}
             </h2>
             <p className="text-muted-foreground font-body max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
