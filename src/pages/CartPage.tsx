@@ -10,20 +10,6 @@ import PageLayout from "@/components/PageLayout";
 
 type DeliveryMode = "delivery" | "pickup";
 
-const timeSlots = [
-  "11:00 — 11:30",
-  "11:30 — 12:00",
-  "12:00 — 12:30",
-  "12:30 — 13:00",
-  "13:00 — 13:30",
-  "13:30 — 14:00",
-  "14:00 — 14:30",
-  "18:00 — 18:30",
-  "18:30 — 19:00",
-  "19:00 — 19:30",
-  "19:30 — 20:00",
-  "20:00 — 20:30",
-];
 
 const deliverySchema = z.object({
   address: z.string().trim().min(5, "min5").max(200),
