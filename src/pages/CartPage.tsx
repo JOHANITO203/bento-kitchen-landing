@@ -291,12 +291,6 @@ const CartPage = () => {
                     {deliveryFee > 0 ? `${deliveryFee} ${t.currency}` : t.free}
                   </span>
                 </div>
-                {selectedSlot && (
-                  <div className="flex justify-between text-sm font-body">
-                    <span className="text-muted-foreground">{t.timeSlot}</span>
-                    <span className="text-foreground tabular-nums">{selectedSlot}</span>
-                  </div>
-                )}
                 <div className="border-t border-border/30 pt-2 flex justify-between">
                   <span className="text-base font-display font-semibold text-foreground">{t.total}</span>
                   <span className="text-xl font-display font-bold text-primary tabular-nums">{grandTotal} {t.currency}</span>
