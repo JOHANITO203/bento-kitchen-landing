@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
-import { Minus, Plus, Trash2, ShoppingBag, MapPin, Phone, MessageSquare, Truck, Store, Clock, ChevronRight, CheckCircle2 } from "lucide-react";
+import { Minus, Plus, Trash2, ShoppingBag, MapPin, Phone, MessageSquare, Truck, Store, ChevronRight, CheckCircle2 } from "lucide-react";
 import { z } from "zod";
 import woodBg from "@/assets/wood-bg.jpg";
 import { useLang } from "@/context/LanguageContext";
@@ -10,20 +10,6 @@ import PageLayout from "@/components/PageLayout";
 
 type DeliveryMode = "delivery" | "pickup";
 
-const timeSlots = [
-  "11:00 — 11:30",
-  "11:30 — 12:00",
-  "12:00 — 12:30",
-  "12:30 — 13:00",
-  "13:00 — 13:30",
-  "13:30 — 14:00",
-  "14:00 — 14:30",
-  "18:00 — 18:30",
-  "18:30 — 19:00",
-  "19:00 — 19:30",
-  "19:30 — 20:00",
-  "20:00 — 20:30",
-];
 
 const deliverySchema = z.object({
   address: z.string().trim().min(5, "min5").max(200),
@@ -37,7 +23,7 @@ const CartPage = () => {
   const navigate = useNavigate();
 
   const [deliveryMode, setDeliveryMode] = useState<DeliveryMode>("delivery");
-  const [selectedSlot, setSelectedSlot] = useState<string | null>(null);
+  
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
   const [comment, setComment] = useState("");
@@ -61,7 +47,7 @@ const CartPage = () => {
       if (phone.trim().length < 7) newErrors.phone = "min7";
     }
 
-    if (!selectedSlot) newErrors.slot = "required";
+    
     if (items.length === 0) return;
 
     if (Object.keys(newErrors).length > 0) {
@@ -219,34 +205,6 @@ const CartPage = () => {
               </div>
             </motion.div>
 
-            {/* ===== TIME SLOTS ===== */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.25 }}
-              className="rounded-3xl bg-secondary p-5 shadow-bento mb-5"
-            >
-              <div className="flex items-center gap-2 mb-4">
-                <Clock className="w-4 h-4 text-primary" strokeWidth={1.5} />
-                <h3 className="text-sm font-display font-semibold text-foreground">{t.chooseTime}</h3>
-              </div>
-              {errors.slot && <p className="text-xs text-destructive font-body mb-2">{t.slotRequired}</p>}
-              <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
-                {timeSlots.map((slot) => (
-                  <button
-                    key={slot}
-                    onClick={() => setSelectedSlot(slot)}
-                    className={`rounded-xl px-3 py-2.5 text-xs font-medium transition-all duration-300 bento-ease ${
-                      selectedSlot === slot
-                        ? "bg-primary text-primary-foreground shadow-bento"
-                        : "bg-background text-foreground hover:bg-background/80"
-                    }`}
-                  >
-                    <span className="font-body tabular-nums">{slot}</span>
-                  </button>
-                ))}
-              </div>
-            </motion.div>
 
             {/* ===== DELIVERY FORM ===== */}
             <motion.div
@@ -333,12 +291,6 @@ const CartPage = () => {
                     {deliveryFee > 0 ? `${deliveryFee} ${t.currency}` : t.free}
                   </span>
                 </div>
-                {selectedSlot && (
-                  <div className="flex justify-between text-sm font-body">
-                    <span className="text-muted-foreground">{t.timeSlot}</span>
-                    <span className="text-foreground tabular-nums">{selectedSlot}</span>
-                  </div>
-                )}
                 <div className="border-t border-border/30 pt-2 flex justify-between">
                   <span className="text-base font-display font-semibold text-foreground">{t.total}</span>
                   <span className="text-xl font-display font-bold text-primary tabular-nums">{grandTotal} {t.currency}</span>
