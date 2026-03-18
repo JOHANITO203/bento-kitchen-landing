@@ -72,7 +72,7 @@ const CategoryGrid = () => {
   const { t } = useLang();
 
   return (
-    <div className="col-span-full flex flex-col gap-4">
+    <div className="flex flex-col gap-4">
       <h2 className="text-xl font-display font-semibold text-foreground mt-2">{t.categories}</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         {categories.map((cat, i) => (
