@@ -219,34 +219,6 @@ const CartPage = () => {
               </div>
             </motion.div>
 
-            {/* ===== TIME SLOTS ===== */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.25 }}
-              className="rounded-3xl bg-secondary p-5 shadow-bento mb-5"
-            >
-              <div className="flex items-center gap-2 mb-4">
-                <Clock className="w-4 h-4 text-primary" strokeWidth={1.5} />
-                <h3 className="text-sm font-display font-semibold text-foreground">{t.chooseTime}</h3>
-              </div>
-              {errors.slot && <p className="text-xs text-destructive font-body mb-2">{t.slotRequired}</p>}
-              <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
-                {timeSlots.map((slot) => (
-                  <button
-                    key={slot}
-                    onClick={() => setSelectedSlot(slot)}
-                    className={`rounded-xl px-3 py-2.5 text-xs font-medium transition-all duration-300 bento-ease ${
-                      selectedSlot === slot
-                        ? "bg-primary text-primary-foreground shadow-bento"
-                        : "bg-background text-foreground hover:bg-background/80"
-                    }`}
-                  >
-                    <span className="font-body tabular-nums">{slot}</span>
-                  </button>
-                ))}
-              </div>
-            </motion.div>
 
             {/* ===== DELIVERY FORM ===== */}
             <motion.div
