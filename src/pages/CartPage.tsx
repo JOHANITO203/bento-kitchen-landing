@@ -23,7 +23,7 @@ const CartPage = () => {
   const navigate = useNavigate();
 
   const [deliveryMode, setDeliveryMode] = useState<DeliveryMode>("delivery");
-  const [selectedSlot, setSelectedSlot] = useState<string | null>(null);
+  
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
   const [comment, setComment] = useState("");
