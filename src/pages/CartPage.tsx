@@ -47,7 +47,7 @@ const CartPage = () => {
       if (phone.trim().length < 7) newErrors.phone = "min7";
     }
 
-    if (!selectedSlot) newErrors.slot = "required";
+    
     if (items.length === 0) return;
 
     if (Object.keys(newErrors).length > 0) {
