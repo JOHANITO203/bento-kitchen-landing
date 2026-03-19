@@ -1,4 +1,4 @@
-import woodBg from "@/assets/wood-bg.jpg";
+import woodBg from "@/assets/wood-bg.webp";
 import AppHeader from "@/components/AppHeader";
 import MobileBottomNav from "@/components/MobileBottomNav";
 import CartDrawer from "@/components/CartDrawer";
