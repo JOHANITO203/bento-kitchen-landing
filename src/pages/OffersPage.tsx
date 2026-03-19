@@ -134,7 +134,7 @@ const OffersPage = () => {
           className="relative overflow-hidden rounded-3xl shadow-bento mb-8"
         >
           {/* Background hero image */}
-          <img src={heroOffers} alt="" className="absolute inset-0 w-full h-full object-cover" />
+          <img src={heroOffers} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
 
           {/* Graffiti texture */}
