@@ -1,8 +1,8 @@
 import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Clock, Flame, Sparkles, Timer, CalendarDays, Plus, Percent } from "lucide-react";
-import heroOffers from "@/assets/heroes/hero-offers.jpg";
-import graffitiSplash from "@/assets/graffiti-splash-1.png";
+import heroOffers from "@/assets/heroes/hero-offers.webp";
+import graffitiSplash from "@/assets/graffiti-splash-1.webp";
 import { useLang } from "@/context/LanguageContext";
 import { useCart } from "@/context/CartContext";
 import { promoOfTheDay, discountedDishes, type PromoOffer } from "@/data/offersData";

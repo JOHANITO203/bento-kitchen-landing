@@ -6,6 +6,7 @@ import { useLang } from "@/context/LanguageContext";
 import { categoriesConfig } from "@/data/categoriesConfig";
 import { dishes, type CategoryKey } from "@/data/menuData";
 import DishCard from "@/components/DishCard";
+import OptimizedImage from "@/components/OptimizedImage";
 import PageLayout from "@/components/PageLayout";
 
 const CategoryPage = () => {

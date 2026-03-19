@@ -6,11 +6,11 @@ import { dishes, categoryKeys, type CategoryKey, type Badge } from "@/data/menuD
 import DishCard from "@/components/DishCard";
 import PageLayout from "@/components/PageLayout";
 
-import filterVegetarian from "@/assets/filter-vegetarian.png";
-import filterFast from "@/assets/filter-fast.png";
-import filterStarred from "@/assets/filter-starred.png";
-import filterHealthy from "@/assets/filter-healthy.png";
-import filterNew from "@/assets/filter-new.png";
+import filterVegetarian from "@/assets/filter-vegetarian.webp";
+import filterFast from "@/assets/filter-fast.webp";
+import filterStarred from "@/assets/filter-starred.webp";
+import filterHealthy from "@/assets/filter-healthy.webp";
+import filterNew from "@/assets/filter-new.webp";
 
 
 const categoryIcons: Record<CategoryKey, React.ReactNode> = {
