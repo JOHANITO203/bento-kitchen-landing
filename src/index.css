@@ -138,6 +138,18 @@
     box-shadow: var(--shadow-elevated-hover);
   }
 
+  .shadow-neu-inset {
+    box-shadow: var(--shadow-neu-inset);
+  }
+
+  .shadow-neu-flat {
+    box-shadow: var(--shadow-neu-flat);
+  }
+
+  .shadow-neu-raised {
+    box-shadow: var(--shadow-neu-raised);
+  }
+
   .bento-ease {
     transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
   }
