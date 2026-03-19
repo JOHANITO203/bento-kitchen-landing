@@ -50,8 +50,8 @@ const BentoFilters = () => {
               onClick={() => toggle(f.label)}
               className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all duration-300 bento-ease ${
                 active
-                  ? "bg-foreground text-background shadow-bento"
-                  : "bg-background text-foreground hover:bg-background/80"
+                  ? "shadow-neu-inset bg-background/80 text-foreground"
+                  : "shadow-neu-flat bg-secondary text-foreground hover:shadow-neu-raised"
               }`}
             >
               <img src={f.icon} alt="" className="w-6 h-6 object-contain" />
