@@ -19,7 +19,7 @@ const BentoCategory = ({ labelKey, titleKey, image, delay = 0 }: BentoCategoryPr
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay, ease: [0.2, 0, 0, 1] }}
-      className="group relative overflow-visible rounded-3xl bg-secondary p-6 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-1 col-span-full sm:col-span-6 lg:col-span-4 flex flex-col justify-between min-h-[260px] cursor-pointer border-2 border-transparent hover:border-primary/20"
+      className="group relative overflow-visible rounded-3xl bg-secondary p-6 shadow-neu-raised transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-1 col-span-full sm:col-span-6 lg:col-span-4 flex flex-col justify-between min-h-[260px] cursor-pointer border border-transparent hover:border-primary/10"
     >
       <div className="relative z-10">
         <span className="text-xs font-bold uppercase tracking-widest text-primary">

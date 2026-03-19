@@ -37,15 +37,23 @@
 
     --radius: 1.5rem;
 
-    --shadow-bento: 0 0 0 1px rgba(255,255,255,.05), 0 2px 4px rgba(0,0,0,.3), 0 12px 24px rgba(0,0,0,.4);
-    --shadow-bento-hover: 0 0 0 1px rgba(255,255,255,.08), 0 4px 8px rgba(0,0,0,.4), 0 24px 48px rgba(0,0,0,.5);
+    /* Neumorphism shadows (dark mode) */
+    --neu-light: rgba(255, 255, 255, 0.05);
+    --neu-dark: rgba(0, 0, 0, 0.7);
 
-    --shadow-glow-primary: 0 0 12px hsla(12, 90%, 50%, 0.4), 0 0 24px hsla(12, 90%, 50%, 0.15);
-    --shadow-glow-primary-hover: 0 0 20px hsla(12, 90%, 50%, 0.55), 0 0 40px hsla(12, 90%, 50%, 0.25);
-    --shadow-glow-accent: 0 0 12px hsla(142, 70%, 45%, 0.4), 0 0 24px hsla(142, 70%, 45%, 0.15);
-    --shadow-glow-accent-hover: 0 0 20px hsla(142, 70%, 45%, 0.55), 0 0 40px hsla(142, 70%, 45%, 0.25);
-    --shadow-elevated: 0 1px 2px rgba(255,255,255,.06), 0 4px 12px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.08);
-    --shadow-elevated-hover: 0 1px 3px rgba(255,255,255,.1), 0 8px 24px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.12);
+    --shadow-bento: 6px 6px 16px var(--neu-dark), -6px -6px 16px var(--neu-light), inset 0 1px 0 var(--neu-light);
+    --shadow-bento-hover: 8px 8px 24px var(--neu-dark), -8px -8px 24px rgba(255,255,255,0.07), inset 0 1px 0 rgba(255,255,255,0.08);
+
+    --shadow-neu-inset: inset 4px 4px 10px var(--neu-dark), inset -4px -4px 10px var(--neu-light);
+    --shadow-neu-flat: 4px 4px 12px var(--neu-dark), -4px -4px 12px var(--neu-light);
+    --shadow-neu-raised: 8px 8px 20px var(--neu-dark), -8px -8px 20px var(--neu-light), inset 0 1px 0 var(--neu-light);
+
+    --shadow-glow-primary: 0 0 12px hsla(12, 90%, 50%, 0.4), 4px 4px 12px var(--neu-dark), -4px -4px 12px var(--neu-light);
+    --shadow-glow-primary-hover: 0 0 20px hsla(12, 90%, 50%, 0.55), 6px 6px 16px var(--neu-dark), -6px -6px 16px var(--neu-light);
+    --shadow-glow-accent: 0 0 12px hsla(142, 70%, 45%, 0.4), 4px 4px 12px var(--neu-dark), -4px -4px 12px var(--neu-light);
+    --shadow-glow-accent-hover: 0 0 20px hsla(142, 70%, 45%, 0.55), 6px 6px 16px var(--neu-dark), -6px -6px 16px var(--neu-light);
+    --shadow-elevated: 6px 6px 16px var(--neu-dark), -6px -6px 16px var(--neu-light), inset 0 1px 0 var(--neu-light);
+    --shadow-elevated-hover: 10px 10px 24px var(--neu-dark), -10px -10px 24px rgba(255,255,255,0.07), inset 0 1px 0 rgba(255,255,255,0.08);
 
     --sidebar-background: 0 0% 7%;
     --sidebar-foreground: 0 0% 75%;
@@ -128,6 +136,18 @@
 
   .shadow-elevated-hover {
     box-shadow: var(--shadow-elevated-hover);
+  }
+
+  .shadow-neu-inset {
+    box-shadow: var(--shadow-neu-inset);
+  }
+
+  .shadow-neu-flat {
+    box-shadow: var(--shadow-neu-flat);
+  }
+
+  .shadow-neu-raised {
+    box-shadow: var(--shadow-neu-raised);
   }
 
   .bento-ease {
