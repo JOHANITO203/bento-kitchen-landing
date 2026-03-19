@@ -6,6 +6,7 @@ import { useLang } from "@/context/LanguageContext";
 import { categoriesConfig } from "@/data/categoriesConfig";
 import { dishes, type CategoryKey } from "@/data/menuData";
 import DishCard from "@/components/DishCard";
+import OptimizedImage from "@/components/OptimizedImage";
 import PageLayout from "@/components/PageLayout";
 
 const CategoryPage = () => {
@@ -34,9 +35,10 @@ const CategoryPage = () => {
         transition={{ duration: 0.8 }}
         className="relative h-[300px] md:h-[400px] overflow-hidden"
       >
-        <img
+        <OptimizedImage
           src={category.heroImage}
           alt={t[category.labelKey]}
+          lazy={false}
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/20" />

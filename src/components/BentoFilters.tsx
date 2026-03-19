@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { useState } from "react";
 import { useLang } from "@/context/LanguageContext";
-import filterVegetarian from "@/assets/filter-vegetarian.png";
-import filterFast from "@/assets/filter-fast.png";
-import filterStarred from "@/assets/filter-starred.png";
-import filterHealthy from "@/assets/filter-healthy.png";
-import filterNew from "@/assets/filter-new.png";
+import filterVegetarian from "@/assets/filter-vegetarian.webp";
+import filterFast from "@/assets/filter-fast.webp";
+import filterStarred from "@/assets/filter-starred.webp";
+import filterHealthy from "@/assets/filter-healthy.webp";
+import filterNew from "@/assets/filter-new.webp";
 
 const BentoFilters = () => {
   const { t } = useLang();

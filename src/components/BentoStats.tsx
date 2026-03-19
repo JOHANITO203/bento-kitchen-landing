@@ -3,8 +3,8 @@ import { Clock, Flame, ArrowRight } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
 import { useCart } from "@/context/CartContext";
 import { useState, useEffect } from "react";
-import jollofImg from "@/assets/jollof.png";
-import graffitiSplash from "@/assets/graffiti-splash-1.png";
+import jollofImg from "@/assets/jollof.webp";
+import graffitiSplash from "@/assets/graffiti-splash-1.webp";
 
 const BentoStats = () => {
   const { t } = useLang();
@@ -41,6 +41,8 @@ const BentoStats = () => {
         src={graffitiSplash}
         alt=""
         className="absolute -bottom-8 -left-8 w-56 h-56 object-contain opacity-20 pointer-events-none rotate-180"
+        loading="lazy"
+        decoding="async"
       />
 
       {/* Badge */}
@@ -83,6 +85,8 @@ const BentoStats = () => {
           className="w-20 h-20 object-contain drop-shadow-lg shrink-0"
           animate={{ rotate: [0, 5, -5, 0] }}
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+          loading="lazy"
+          decoding="async"
         />
       </div>
 

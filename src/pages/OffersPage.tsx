@@ -1,8 +1,8 @@
 import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Clock, Flame, Sparkles, Timer, CalendarDays, Plus, Percent } from "lucide-react";
-import heroOffers from "@/assets/heroes/hero-offers.jpg";
-import graffitiSplash from "@/assets/graffiti-splash-1.png";
+import heroOffers from "@/assets/heroes/hero-offers.webp";
+import graffitiSplash from "@/assets/graffiti-splash-1.webp";
 import { useLang } from "@/context/LanguageContext";
 import { useCart } from "@/context/CartContext";
 import { promoOfTheDay, discountedDishes, type PromoOffer } from "@/data/offersData";
@@ -134,11 +134,11 @@ const OffersPage = () => {
           className="relative overflow-hidden rounded-3xl shadow-bento mb-8"
         >
           {/* Background hero image */}
-          <img src={heroOffers} alt="" className="absolute inset-0 w-full h-full object-cover" />
+          <img src={heroOffers} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
 
           {/* Graffiti texture */}
-          <img src={graffitiSplash} alt="" className="absolute -bottom-10 -right-10 w-64 h-64 object-contain opacity-10 pointer-events-none" />
+          <img src={graffitiSplash} alt="" className="absolute -bottom-10 -right-10 w-64 h-64 object-contain opacity-10 pointer-events-none" loading="lazy" decoding="async" />
 
           <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 p-6 md:p-10">
             {/* Left content */}

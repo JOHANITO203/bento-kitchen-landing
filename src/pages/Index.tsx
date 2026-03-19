@@ -9,7 +9,7 @@ import AppHeader from "@/components/AppHeader";
 import MobileBottomNav from "@/components/MobileBottomNav";
 import CartDrawer from "@/components/CartDrawer";
 import Footer from "@/components/Footer";
-import woodBg from "@/assets/wood-bg.jpg";
+import woodBg from "@/assets/wood-bg.webp";
 
 const SnapSection = ({
   children,

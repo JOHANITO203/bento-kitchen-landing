@@ -2,14 +2,15 @@ import { motion } from "framer-motion";
 import { ArrowRight, Star, Flame, UtensilsCrossed, Sandwich, GlassWater, Cake, Package } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLang } from "@/context/LanguageContext";
+import OptimizedImage from "@/components/OptimizedImage";
 
-import populairesImg from "@/assets/populaires.png";
-import grilladesImg from "@/assets/grillades.png";
-import traditionnelsImg from "@/assets/plats_traditionnels.png";
-import streetfoodImg from "@/assets/streetfood.png";
-import boissonsImg from "@/assets/boissons.png";
-import dessertsImg from "@/assets/desserts.png";
-import comboImg from "@/assets/combo.png";
+import populairesImg from "@/assets/populaires.webp";
+import grilladesImg from "@/assets/grillades.webp";
+import traditionnelsImg from "@/assets/plats_traditionnels.webp";
+import streetfoodImg from "@/assets/streetfood.webp";
+import boissonsImg from "@/assets/boissons.webp";
+import dessertsImg from "@/assets/desserts.webp";
+import comboImg from "@/assets/combo.webp";
 
 interface CategoryItemProps {
   labelKey: string;
@@ -48,7 +49,7 @@ const CategoryItem = ({ labelKey, descKey, image, delay, icon }: CategoryItemPro
           <ArrowRight className="w-4 h-4 text-primary transition-transform duration-300 bento-ease group-hover:translate-x-1" strokeWidth={1.5} />
         </div>
 
-        <img
+        <OptimizedImage
           src={image}
           alt={label}
           className="absolute right-1 sm:right-4 bottom-1 sm:bottom-2 w-24 sm:w-36 h-24 sm:h-36 object-contain drop-shadow-2xl transition-transform duration-500 bento-ease group-hover:scale-110 group-hover:-translate-y-1"

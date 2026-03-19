@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import { Minus, Plus, Trash2, ShoppingBag, MapPin, Phone, MessageSquare, Truck, Store, ChevronRight, CheckCircle2 } from "lucide-react";
 import { z } from "zod";
-import woodBg from "@/assets/wood-bg.jpg";
+import woodBg from "@/assets/wood-bg.webp";
 import { useLang } from "@/context/LanguageContext";
 import { useCart } from "@/context/CartContext";
 import PageLayout from "@/components/PageLayout";

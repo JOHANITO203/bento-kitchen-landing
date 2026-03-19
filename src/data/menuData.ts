@@ -1,20 +1,20 @@
-import jollofImg from "@/assets/dishes/jollof.png";
-import mafeImg from "@/assets/dishes/mafe.png";
-import thiebImg from "@/assets/dishes/thieb.png";
-import suyaImg from "@/assets/dishes/suya.png";
-import allocoImg from "@/assets/dishes/alloco.png";
-import bissapImg from "@/assets/dishes/bissap.png";
-import beignetsImg from "@/assets/dishes/beignets.png";
-import yassaImg from "@/assets/dishes/yassa.png";
-import poissonImg from "@/assets/dishes/poisson-grille.png";
-import gingembreImg from "@/assets/dishes/gingembre.png";
-import fatayaImg from "@/assets/dishes/fataya.png";
-import bananaImg from "@/assets/dishes/banana-fritters.png";
-import pouletMayoAttiekeImg from "@/assets/dishes/poulet-mayo-attieke.png";
-import porcBraiseAttiekeImg from "@/assets/dishes/porc-braise-attieke.png";
-import sauceArachidePouletImg from "@/assets/dishes/sauce-arachide-poulet.png";
-import comboPouletMayoImg from "@/assets/dishes/combo-poulet-mayo.png";
-import comboPorcBraiseImg from "@/assets/dishes/combo-porc-braise.png";
+import jollofImg from "@/assets/dishes/jollof.webp";
+import mafeImg from "@/assets/dishes/mafe.webp";
+import thiebImg from "@/assets/dishes/thieb.webp";
+import suyaImg from "@/assets/dishes/suya.webp";
+import allocoImg from "@/assets/dishes/alloco.webp";
+import bissapImg from "@/assets/dishes/bissap.webp";
+import beignetsImg from "@/assets/dishes/beignets.webp";
+import yassaImg from "@/assets/dishes/yassa.webp";
+import poissonImg from "@/assets/dishes/poisson-grille.webp";
+import gingembreImg from "@/assets/dishes/gingembre.webp";
+import fatayaImg from "@/assets/dishes/fataya.webp";
+import bananaImg from "@/assets/dishes/banana-fritters.webp";
+import pouletMayoAttiekeImg from "@/assets/dishes/poulet-mayo-attieke.webp";
+import porcBraiseAttiekeImg from "@/assets/dishes/porc-braise-attieke.webp";
+import sauceArachidePouletImg from "@/assets/dishes/sauce-arachide-poulet.webp";
+import comboPouletMayoImg from "@/assets/dishes/combo-poulet-mayo.webp";
+import comboPorcBraiseImg from "@/assets/dishes/combo-porc-braise.webp";
 
 export type CategoryKey = "popular" | "grillades" | "traditionalDishes" | "streetFood" | "drinks" | "desserts" | "combo";
 
