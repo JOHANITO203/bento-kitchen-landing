@@ -138,7 +138,7 @@ const OffersPage = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
 
           {/* Graffiti texture */}
-          <img src={graffitiSplash} alt="" className="absolute -bottom-10 -right-10 w-64 h-64 object-contain opacity-10 pointer-events-none" />
+          <img src={graffitiSplash} alt="" className="absolute -bottom-10 -right-10 w-64 h-64 object-contain opacity-10 pointer-events-none" loading="lazy" decoding="async" />
 
           <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 p-6 md:p-10">
             {/* Left content */}
