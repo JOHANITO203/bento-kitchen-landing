@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import heroDishes from "@/assets/hero-dishes.jpg";
+import OptimizedImage from "@/components/OptimizedImage";
+import heroDishes from "@/assets/hero-dishes.webp";
 
 const BentoLiveTracker = () => {
   return (
@@ -10,10 +11,11 @@ const BentoLiveTracker = () => {
       transition={{ duration: 0.7, delay: 0.1, ease: [0.2, 0, 0, 1] }}
       className="group relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover hover:-translate-y-0.5 col-span-full lg:col-span-4 min-h-[140px] sm:min-h-[160px]">
       
-      <img
+      <OptimizedImage
         src={heroDishes}
         alt="African dishes"
-        className="w-full h-full object-cover bg-background" />
+        className="w-full h-full object-cover bg-background"
+      />
       
     </motion.div>);
 

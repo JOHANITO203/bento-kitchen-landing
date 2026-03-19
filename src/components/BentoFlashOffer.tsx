@@ -2,9 +2,10 @@ import { motion } from "framer-motion";
 import { ArrowRight, Plus } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { useLang } from "@/context/LanguageContext";
-import jollofImg from "@/assets/jollof.png";
-import mafeImg from "@/assets/mafe.png";
-import thiebImg from "@/assets/thieboudienne.png";
+import OptimizedImage from "@/components/OptimizedImage";
+import jollofImg from "@/assets/jollof.webp";
+import mafeImg from "@/assets/mafe.webp";
+import thiebImg from "@/assets/thieboudienne.webp";
 
 const BentoFlashOffer = () => {
   const { addItem } = useCart();
@@ -46,7 +47,7 @@ const BentoFlashOffer = () => {
             className="shrink-0 w-36 sm:w-48 rounded-xl bg-background p-2.5 sm:p-3 shadow-bento transition-all duration-300 bento-ease hover:shadow-bento-hover cursor-pointer"
           >
             <div className="aspect-square rounded-lg overflow-hidden bg-secondary mb-3 flex items-center justify-center">
-              <img src={dish.image} alt={dish.name} className="w-full h-full object-contain" />
+              <OptimizedImage src={dish.image} alt={dish.name} className="w-full h-full object-contain" />
             </div>
             <p className="text-sm font-medium text-foreground font-body truncate">{dish.name}</p>
             <div className="flex items-center justify-between mt-1.5">

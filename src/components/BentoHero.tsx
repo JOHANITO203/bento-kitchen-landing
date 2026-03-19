@@ -1,8 +1,8 @@
 import { ArrowRight, UtensilsCrossed } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLang } from "@/context/LanguageContext";
-import graffitiSplash from "@/assets/graffiti-splash-1.png";
-import graffitiTag from "@/assets/graffiti-tag.png";
+import graffitiSplash from "@/assets/graffiti-splash-1.webp";
+import graffitiTag from "@/assets/graffiti-tag.webp";
 
 const BentoHero = () => {
   const { t } = useLang();
@@ -20,6 +20,8 @@ const BentoHero = () => {
         src={graffitiSplash}
         alt=""
         className="absolute -top-10 -right-10 w-40 sm:w-80 h-40 sm:h-80 object-contain opacity-25 pointer-events-none rotate-12"
+        loading="lazy"
+        decoding="async"
       />
 
       <div className="relative z-10">
@@ -52,6 +54,8 @@ const BentoHero = () => {
         className="absolute bottom-3 right-4 w-32 h-auto opacity-25 pointer-events-none"
         animate={{ rotate: [-2, 2, -2] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        loading="lazy"
+        decoding="async"
       />
     </motion.div>
   );

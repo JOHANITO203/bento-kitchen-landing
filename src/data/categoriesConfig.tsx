@@ -1,21 +1,21 @@
 import { Star, Flame, UtensilsCrossed, Sandwich, GlassWater, Cake, Package } from "lucide-react";
 import type { CategoryKey } from "@/data/menuData";
 
-import heroPopular from "@/assets/heroes/hero-popular.jpg";
-import heroGrillades from "@/assets/heroes/hero-grillades.jpg";
-import heroTraditional from "@/assets/heroes/hero-traditional.jpg";
-import heroStreetfood from "@/assets/heroes/hero-streetfood.jpg";
-import heroDrinks from "@/assets/heroes/hero-drinks.jpg";
-import heroDesserts from "@/assets/heroes/hero-desserts.jpg";
-import heroCombo from "@/assets/heroes/hero-combo.jpg";
+import heroPopular from "@/assets/heroes/hero-popular.webp";
+import heroGrillades from "@/assets/heroes/hero-grillades.webp";
+import heroTraditional from "@/assets/heroes/hero-traditional.webp";
+import heroStreetfood from "@/assets/heroes/hero-streetfood.webp";
+import heroDrinks from "@/assets/heroes/hero-drinks.webp";
+import heroDesserts from "@/assets/heroes/hero-desserts.webp";
+import heroCombo from "@/assets/heroes/hero-combo.webp";
 
-import populairesImg from "@/assets/populaires.png";
-import grilladesImg from "@/assets/grillades.png";
-import traditionnelsImg from "@/assets/plats_traditionnels.png";
-import streetfoodImg from "@/assets/streetfood.png";
-import boissonsImg from "@/assets/boissons.png";
-import dessertsImg from "@/assets/desserts.png";
-import comboImg from "@/assets/combo.png";
+import populairesImg from "@/assets/populaires.webp";
+import grilladesImg from "@/assets/grillades.webp";
+import traditionnelsImg from "@/assets/plats_traditionnels.webp";
+import streetfoodImg from "@/assets/streetfood.webp";
+import boissonsImg from "@/assets/boissons.webp";
+import dessertsImg from "@/assets/desserts.webp";
+import comboImg from "@/assets/combo.webp";
 
 export interface CategoryConfig {
   key: CategoryKey;

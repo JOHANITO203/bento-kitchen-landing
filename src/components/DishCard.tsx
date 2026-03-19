@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Plus, Clock, Flame, Leaf, Star, Sparkles, Heart } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
 import { useCart } from "@/context/CartContext";
+import OptimizedImage from "@/components/OptimizedImage";
 import type { Dish, Badge } from "@/data/menuData";
 
 const badgeConfig: Record<Badge, { icon: React.ReactNode; colorClass: string }> = {
@@ -46,7 +47,7 @@ const DishCard = ({ dish, index }: DishCardProps) => {
     >
       {/* Image */}
       <div className="relative h-44 overflow-hidden bg-background/50 flex items-center justify-center p-4">
-        <img
+        <OptimizedImage
           src={dish.image}
           alt={name}
           className="w-36 h-36 object-contain drop-shadow-2xl transition-transform duration-500 bento-ease group-hover:scale-110"

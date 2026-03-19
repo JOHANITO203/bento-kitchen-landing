@@ -1,7 +1,7 @@
 import { useLang } from "@/context/LanguageContext";
 import { Heart, Globe, Utensils } from "lucide-react";
 import { motion } from "framer-motion";
-import graffitiSplash2 from "@/assets/graffiti-splash-2.png";
+import graffitiSplash2 from "@/assets/graffiti-splash-2.webp";
 
 const AboutSection = () => {
   const { t } = useLang();
@@ -27,6 +27,8 @@ const AboutSection = () => {
           src={graffitiSplash2}
           alt=""
           className="absolute top-0 right-0 w-72 h-72 object-contain opacity-15 pointer-events-none -translate-y-8 translate-x-8 rotate-45"
+          loading="lazy"
+          decoding="async"
         />
         <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 

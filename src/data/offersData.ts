@@ -1,11 +1,11 @@
-import jollofImg from "@/assets/dishes/jollof.png";
-import mafeImg from "@/assets/dishes/mafe.png";
-import thiebImg from "@/assets/dishes/thieb.png";
-import suyaImg from "@/assets/dishes/suya.png";
-import yassaImg from "@/assets/dishes/yassa.png";
-import allocoImg from "@/assets/dishes/alloco.png";
-import bissapImg from "@/assets/dishes/bissap.png";
-import beignetsImg from "@/assets/dishes/beignets.png";
+import jollofImg from "@/assets/dishes/jollof.webp";
+import mafeImg from "@/assets/dishes/mafe.webp";
+import thiebImg from "@/assets/dishes/thieb.webp";
+import suyaImg from "@/assets/dishes/suya.webp";
+import yassaImg from "@/assets/dishes/yassa.webp";
+import allocoImg from "@/assets/dishes/alloco.webp";
+import bissapImg from "@/assets/dishes/bissap.webp";
+import beignetsImg from "@/assets/dishes/beignets.webp";
 
 export interface PromoOffer {
   id: string;
